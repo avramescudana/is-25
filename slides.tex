@@ -7,6 +7,7 @@
 % packages
 \usepackage{mathrsfs}  
 \usepackage{cancel}
+\usepackage{smartdiagram}
 % \usepackage{caption}
 % \usepackage{tikz}
 
@@ -644,13 +645,13 @@
                 \begin{itemize}\itemsep0em 
                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{isgold}\blacktriangleright}$}}} 
                     \item {{\bfseries\color{isgold}Before collision} {\scriptsize $\tau\leq 0\,\mathrm{fm/c}$}}\\[1pt]
-                        {\color{lightgray}\scriptsize\itshape {\color{isgold}Color glass condensate (CGC)}}
+                        {\color{lightgray}\scriptsize\itshape Color glass condensate (CGC)}
                     \item {{\bfseries\color{isgold} Initial stage} {\scriptsize $\tau\lesssim
                     0.3\,\mathrm{fm/c}$}}\\[1pt]
-                        {\color{lightgray}\scriptsize\itshape {\color{isgold}Glasma classical gluon fields}}
+                        {\color{lightgray}\scriptsize\itshape Glasma classical gluon fields}
                     \item {\bfseries\color{isgold}Thermalization} {\scriptsize$\tau\lesssim
                     1\,\mathrm{fm/c}$}\\[1pt] 
-                        {\color{lightgray}\scriptsize\itshape {\color{isgold}Effective kinetic theory (EKT)}} 
+                        {\color{lightgray}\scriptsize\itshape Effective kinetic theory (EKT)}
                         % \\ {\color{lightgray}\scriptsize Quasiparticle distribution function}
                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} \item Local equilibrium {\scriptsize $\tau\lesssim 10\,\mathrm{fm/c}$}\\[1pt]
                     {\color{lightgray}\scriptsize\itshape Relativistic hydrodynamics} 
@@ -692,7 +693,7 @@
                 \begin{tikzpicture}
                     \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.95\textwidth]{images/cover_figure_A01.png}};
                     \draw<1>[white, fill=white, fill opacity=0.9] (0.0,3.55) rectangle (6.8,6.5);
-                    \draw<1>[palgold,thick,fill=palgold,fill opacity=0.1,rounded corners=3pt] (0.1,-0.1) rectangle (6.7,1.3);
+                    \draw<1>[isgold,thick,fill=isgold,fill opacity=0.1,rounded corners=3pt] (0.1,-0.1) rectangle (6.7,1.3);
                     \draw<1>[palviolet,thick,fill=palviolet,fill opacity=0.1,rounded corners=3pt] (0.1,1.35) rectangle (6.7,2.45);
                     \draw<1>[palteal,thick,fill=palteal,fill opacity=0.1,rounded corners=3pt] (0.1,2.5) rectangle (6.7,3.55);
                 \end{tikzpicture}
@@ -765,9 +766,9 @@
         \column{.02\textwidth}
     \end{columns}
     \vspace{-5pt}
-    \blfootnote{\scriptsize Gelis, Iancu, Jalilian-Marian, Venugopalan \href{https://arxiv.org/abs/1002.0333}{{\color{palgold}\texttt{[1002.0333]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Lappi \href{https://arxiv.org/abs/hep-ph/0606207}{{\color{palviolet}\texttt{[hep-ph/0606207]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Gelis \href{https://arxiv.org/abs/1211.3327}{{\color{palviolet}\texttt{[1211.3327]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} \\
+    \blfootnote{\scriptsize Gelis, Iancu, Jalilian-Marian, Venugopalan \href{https://arxiv.org/abs/1002.0333}{{\color{palgold}\texttt{[1002.0333]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}  \\
      \hspace{13.5pt}
-     Baier, Mueller, Schiff, Son \href{https://arxiv.org/abs/hep-ph/0009237}{{\color{palteal}\texttt{[hep-ph/0009237]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+     Lappi \href{https://arxiv.org/abs/hep-ph/0606207}{{\color{palviolet}\texttt{[hep-ph/0606207]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Gelis \href{https://arxiv.org/abs/1211.3327}{{\color{palviolet}\texttt{[1211.3327]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Baier, Mueller, Schiff, Son \href{https://arxiv.org/abs/hep-ph/0009237}{{\color{palteal}\texttt{[hep-ph/0009237]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
     % \begin{tikzpicture}[overlay, remember picture]
     %     \node[anchor=north west] 
     %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ruggieri$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
@@ -787,201 +788,337 @@
 \end{frame}
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%% SUBSECTION %%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% SUBSECTION %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \subsection{Hard probes}
+\subsection{Hard probes}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \setbeamertemplate{background}{
-% \tikz[overlay,remember picture] \node[at=(current page.center), align=center] {\\[10pt]
-% {\includegraphics[height=0.8\paperheight]{images/Holmganga_jets_Liliana-scales.pdf}}};
-% }
-% \begin{frame}
-%     \frametitle{Jets as probes}
-%     \framesubtitle{Stages and scales of interest}
-%     \blfootnote{\scriptsize Apolinário \href{https://indico.cern.ch/event/1385550/}{{\color{jyured}\texttt{[CERN 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Apolinário$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 9:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Jets as probes of IS} \end{talkbox}};
-%     \end{tikzpicture}
-% \end{frame}
-% \setbeamertemplate{background}{}
+\setbeamertemplate{background}{
+\tikz[overlay,remember picture] \node[at=(current page.center), align=center] {\\[10pt]
+{\includegraphics[height=0.8\paperheight]{images/Holmganga_jets_Liliana-scales.pdf}}};
+}
+\begin{frame}
+    \frametitle{Jets as probes}
+    \framesubtitle{Stages and scales of interest}
+    \blfootnote{\scriptsize Apolinário \href{https://indico.cern.ch/event/1385550/}{{\color{jyured}\texttt{[CERN 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Apolinário$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 9:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Jets as probes of IS} \end{talkbox}};
+    % \end{tikzpicture}
+\end{frame}
+\setbeamertemplate{background}{}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{background}{
+\tikz[overlay,remember picture] \node[at=(current page.center), align=center] {\\[10pt]
+{\transparent{0.1}\includegraphics[height=0.8\paperheight]{images/Holmganga_jets_Liliana-scales.png}}};
+}
+\begin{frame}[noframenumbering]
+    \frametitle{Jets as probes}
+    \framesubtitle{of the later stages}
+    \blfootnote{\scriptsize Apolinário \href{https://indico.cern.ch/event/1385550/}{{\color{jyured}\texttt{[CERN 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Apolinário$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 9:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Jets as probes of IS} \end{talkbox}};
+    % \end{tikzpicture}
+    \begin{center}
+        % \vspace{10pt}
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[align=center] at (0,0) {
+                \Large {\color{jyured}High virtuality $Q^2$} jets don't resolve the early time medium \\[10pt]
+                \Large Delay in onset of jet-medium interaction
+            };
+        \end{tikzpicture} 
+    \end{center}
+\end{frame}
+\setbeamertemplate{background}{}
 
-% \setbeamertemplate{background}{
-% \tikz[overlay,remember picture] \node[at=(current page.center), align=left] {\\[-5pt]
-% {\includegraphics[height=0.8\paperheight]{images/LApolinario_HP23-modelling-early_v2.pdf}}};
-% }
-% \begin{frame}[noframenumbering]
-%     \frametitle{Jets as probes of {\color{jyured}early stages}}
-%     % \framesubtitle{Stages and scales of interest}
-%     \blfootnote{\scriptsize Apolinário \href{https://indico.uni-muenster.de/event/1409/contributions/2412/}{{\color{jyured}\texttt{[Hard Probes 23]$^\text{\scalebox{0.9}{\faExternalLink}}$}}} adapted}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}López$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Jet quenching in IS} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=south east] 
-%         at ([xshift=-0.05cm,yshift=1.63cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Silva$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 12:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=south east] 
-%         at ([xshift=-0.05cm,yshift=1.2cm]current page.south east) {\begin{talkbox}\scriptsize{$q\overline{q}$ antenna in early stage} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=south east] 
-%         at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Adhya$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Thu 12:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=south east] 
-%         at ([xshift=-0.05cm,yshift=0.16cm]current page.south east) {\begin{talkbox}\scriptsize{Jet sensitivity to early stage} \end{talkbox}};
-%     \end{tikzpicture}
-% \end{frame}
-% \setbeamertemplate{background}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{background}{
+\tikz[overlay,remember picture] \node[at=(current page.center), align=left] {\\[-5pt]
+{\includegraphics[height=0.8\paperheight]{images/LApolinario_HP23-modelling-early_v2.pdf}}};
+}
+\begin{frame}[noframenumbering]
+    \frametitle{Jets as probes of {\color{jyured}early stages}?}
+    % \framesubtitle{Stages and scales of interest}
+    \blfootnote{\scriptsize Apolinário \href{https://indico.uni-muenster.de/event/1409/contributions/2412/}{{\color{jyured}\texttt{[Hard Probes 23]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}López$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Jet quenching in IS} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=1.63cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Silva$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 12:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=1.2cm]current page.south east) {\begin{talkbox}\scriptsize{$q\overline{q}$ antenna in early stage} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Adhya$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Thu 12:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.16cm]current page.south east) {\begin{talkbox}\scriptsize{Jet sensitivity to early stage} \end{talkbox}};
+    % \end{tikzpicture}
+\end{frame}
+\setbeamertemplate{background}{}
 
-% \begin{frame}
-%     \frametitle{Heavy quarks as probes}
-%     \framesubtitle{Approaches and kinematic regimes}
-%     \vspace{-5pt}
-%     \begin{columns}[onlytextwidth,t]
-%         \column{.02\textwidth}
-%         \column{.57\textwidth}
-%             \vspace{-20pt}
-%             \begin{center}
-%                 \begin{tikzpicture}
-%                     \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.95\textwidth]{images/HP24-Weiyao-Ke-HF-Theory-2-crop-white.png}};
-%                 \end{tikzpicture}
-%             \end{center}
-%         \column{.02\textwidth}
-%         \column{.37\textwidth}
-%         \vspace{-10pt}
-%         \begin{center}
-%             \begin{custombox2}{\color{normal}Approaches}{lightgray}
-%                 \small
-%                 \begin{varwidth}{0.85\textwidth}
-%                 \begin{itemize}\itemsep0em 
-%                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
-%                     \item pQCD production\\[1pt]
-%                         {\color{lightgray}\scriptsize FONLL and GM-VFNS at NLO+NLL accuracy}
-%                     \item Transport models\\[1pt]
-%                         {\color{lightgray}\scriptsize Boltzmann, Langevin, Fokker-Planck equations}
-%                     \item Hadronization\\[1pt]
-%                         {\color{lightgray}\scriptsize Fragmentation + coalescence}  
-%                 \end{itemize}
-%                 \end{varwidth}
-%             \end{custombox2}
-%             \end{center}
-%         \column{.02\textwidth}
-%     \end{columns}
-%     \vspace{-5pt}    
-%     \blfootnote{\scriptsize Ke \href{https://indico.cern.ch/event/1339555/contributions/6038190/}{{\color{jyured}\texttt{[Hard Probes 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Greco$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 15:15$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{HQs transport} \end{talkbox}};
-%     \end{tikzpicture}
-%     % \begin{tikzpicture}[overlay, remember picture]
-%     %     \node[anchor=south east] 
-%     %     at ([xshift=-0.05cm,yshift=1cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Scheihing$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     % \end{tikzpicture}
-%     % \begin{tikzpicture}[overlay, remember picture]
-%     %     \node[anchor=south east] 
-%     %     at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Du Plessis$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     % \end{tikzpicture}
-%     % \begin{tikzpicture}[overlay, remember picture]
-%     %     \node[anchor=south east] 
-%     %     at ([xshift=-0.05cm,yshift=0.15cm]current page.south east) {\begin{talkbox}\scriptsize{HQs at strong coupling} \end{talkbox}};
-%     % \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=south east] 
-%         at ([xshift=-0.05cm,yshift=1.63cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Scheihing$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=south east] 
-%         at ([xshift=-0.05cm,yshift=1.2cm]current page.south east) {\begin{talkbox}\scriptsize{HQs at strong coupling} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=south east] 
-%         at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Du Plessis$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=south east] 
-%         at ([xshift=-0.05cm,yshift=0.16cm]current page.south east) {\begin{talkbox}\scriptsize{HQs in the hybrid model} \end{talkbox}};
-%     \end{tikzpicture}
-% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+    \frametitle{Heavy quarks as probes}
+    \framesubtitle{Approaches and kinematic regimes}
+    \vspace{-5pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+        \column{.57\textwidth}
+            \vspace{-20pt}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.95\textwidth]{images/HP24-Weiyao-Ke-HF-Theory-2-crop-white.png}};
+                \end{tikzpicture}
+            \end{center}
+        \column{.02\textwidth}
+        \column{.37\textwidth}
+        \vspace{10pt}
+        \begin{center}
+            \begin{custombox2}{\color{normal}Approaches}{lightgray}
+                \small
+                \begin{varwidth}{0.85\textwidth}
+                \begin{itemize}\itemsep0em 
+                    \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
+                    \item pQCD production\\[1pt]
+                        {\color{lightgray}\scriptsize FONLL and GM-VFNS at NLO+NLL accuracy}
+                    \item Transport models\\[1pt]
+                        {\color{lightgray}\scriptsize Boltzmann, Langevin, Fokker-Planck equations}
+                    \item Hadronization\\[1pt]
+                        {\color{lightgray}\scriptsize Fragmentation + coalescence}  
+                \end{itemize}
+                \end{varwidth}
+            \end{custombox2}
+            \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \vspace{-5pt}    
+    \blfootnote{\scriptsize Ke \href{https://indico.cern.ch/event/1339555/contributions/6038190/}{{\color{jyured}\texttt{[Hard Probes 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Greco$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 15:15$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{HQs transport} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=1cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Scheihing$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Du Plessis$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.15cm]current page.south east) {\begin{talkbox}\scriptsize{HQs at strong coupling} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=1.63cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Scheihing$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=1.2cm]current page.south east) {\begin{talkbox}\scriptsize{HQs at strong coupling} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Du Plessis$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.16cm]current page.south east) {\begin{talkbox}\scriptsize{HQs in the hybrid model} \end{talkbox}};
+    % \end{tikzpicture}
+\end{frame}
 
-% \begin{frame}[noframenumbering]
-%     \frametitle{Heavy quarks as probes of {\color{jyured}early stages}}
-%     % \framesubtitle{Recent focus on the early stage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%     \begin{center}
-%         \begin{tikzpicture}
-%             \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.8\textwidth]{images/HP24-Weiyao-Ke-HF-Theory-28-crop-white-edit.png}};
-%             % \draw<1>[palgold,thick,fill=palgold,fill opacity=0.1,rounded corners=3pt] (0.0,4) rectangle (\textheight-0.5cm,4.0) node[opacity=1.0, pos=0, anchor=center, xshift=0.0\linewidth,text width=2cm,align=center]{{\Large\color{palgold}\bfseries This talk}};
-%             % \draw<1>[white, fill=white, fill opacity=0.9] (4.3,0.85) rectangle (5.4,5.5);
-%             % \draw<1>[red,thick,fill=red,fill opacity=0.1,rounded corners=3pt] (4.3,0.85) rectangle (5.4,5.5) node[opacity=1.0, pos=0.5, rotate=90, anchor=center, xshift=0.0 ,text width=6.2cm,align=center] {{\Large\color{jyured} Early stage}};
-%         \end{tikzpicture}
-%     \end{center}
-%     \vspace{-10pt}    
-%     \blfootnote{\scriptsize Ke \href{https://indico.cern.ch/event/1339555/contributions/6038190/}{{\color{jyured}\texttt{[Hard Probes 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}} adapted}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-1.6cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ruggieri$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-2.03cm]current page.north west) {\begin{talkbox}\scriptsize{HQs in glasma} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-2.6cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Greco$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 15:15$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-3.03cm]current page.north west) {\begin{talkbox}\scriptsize{HQs in glasma} \end{talkbox}};
-%     \end{tikzpicture}
-%     % \begin{tikzpicture}[overlay, remember picture]
-%     %     \node[anchor=north west] 
-%     %     at ([xshift=0.05cm,yshift=-5.6cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Sharma$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Fri 9:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     % \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-6.03cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Pandey$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 15:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-6.47cm]current page.north west) {\begin{talkbox}\scriptsize{HQs in overoccupied plasma} \end{talkbox}};
-%     \end{tikzpicture}
-% \end{frame}
+\begin{frame}
+    \frametitle{Heavy quarks as probes}
+    \framesubtitle{Approaches and kinematic regimes}
+    {\transparent{0.1}
+    \vspace{-5pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+        \column{.57\textwidth}
+            \vspace{-20pt}
+            \begin{center}
+                \begin{tikzpicture}
+                    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.95\textwidth]{images/HP24-Weiyao-Ke-HF-Theory-2-crop-white.png}};
+                \end{tikzpicture}
+            \end{center}
+        \column{.02\textwidth}
+        \column{.37\textwidth}
+        \vspace{10pt}
+        \begin{center}
+            \begin{custombox2transp}{\transparent{0.1}\color{normal}Approaches}{lightgray}
+                \small
+                \begin{varwidth}{0.85\textwidth}
+                \begin{itemize}\itemsep0em 
+                    \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
+                    \item \transparent{0.1}pQCD production\\[1pt]
+                        {\color{lightgray}\scriptsize FONLL and GM-VFNS at NLO+NLL accuracy}
+                    \item \transparent{0.1}Transport models\\[1pt]
+                        {\color{lightgray}\scriptsize Boltzmann, Langevin, Fokker-Planck equations}
+                    \item \transparent{0.1}Hadronization\\[1pt]
+                        {\color{lightgray}\scriptsize Fragmentation + coalescence}  
+                \end{itemize}
+                \end{varwidth}
+            \end{custombox2transp}
+            \end{center}
+        \column{.02\textwidth}
+    \end{columns}}
+    \begin{center}
+        \vspace{-10pt}
+        \begin{tikzpicture}[remember picture,overlay]
+            \node[align=center] at (0,3) {
+                \Large {\color{jyured}Heavy quark formation} at $\tau_\mathrm{form}\sim 1/m_\mathrm{hq}$ \\[10pt]
+                \Large No medium interaction until QGP phase
+            };
+        \end{tikzpicture} 
+    \end{center}
+    \vspace{-5pt}    
+    \blfootnote{\scriptsize Ke \href{https://indico.cern.ch/event/1339555/contributions/6038190/}{{\color{jyured}\texttt{[Hard Probes 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Greco$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 15:15$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{HQs transport} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=1cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Scheihing$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Du Plessis$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.15cm]current page.south east) {\begin{talkbox}\scriptsize{HQs at strong coupling} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=1.63cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Scheihing$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=1.2cm]current page.south east) {\begin{talkbox}\scriptsize{HQs at strong coupling} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Du Plessis$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=south east] 
+    %     at ([xshift=-0.05cm,yshift=0.16cm]current page.south east) {\begin{talkbox}\scriptsize{HQs in the hybrid model} \end{talkbox}};
+    % \end{tikzpicture}
+\end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[noframenumbering]
+    \frametitle{Heavy quarks as probes of {\color{jyured}early stages}?}
+    % \framesubtitle{Recent focus on the early stage}
+
+    \begin{center}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.8\textwidth]{images/HP24-Weiyao-Ke-HF-Theory-28-crop-white-edit.png}};
+            % \draw<1>[palgold,thick,fill=palgold,fill opacity=0.1,rounded corners=3pt] (0.0,4) rectangle (\textheight-0.5cm,4.0) node[opacity=1.0, pos=0, anchor=center, xshift=0.0\linewidth,text width=2cm,align=center]{{\Large\color{palgold}\bfseries This talk}};
+            % \draw<1>[white, fill=white, fill opacity=0.9] (4.3,0.85) rectangle (5.4,5.5);
+            % \draw<1>[red,thick,fill=red,fill opacity=0.1,rounded corners=3pt] (4.3,0.85) rectangle (5.4,5.5) node[opacity=1.0, pos=0.5, rotate=90, anchor=center, xshift=0.0 ,text width=6.2cm,align=center] {{\Large\color{jyured} Early stage}};
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}    
+    \blfootnote{\scriptsize Ke \href{https://indico.cern.ch/event/1339555/contributions/6038190/}{{\color{jyured}\texttt{[Hard Probes 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-1.6cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ruggieri$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-2.03cm]current page.north west) {\begin{talkbox}\scriptsize{HQs in glasma} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-2.6cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Greco$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 15:15$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-3.03cm]current page.north west) {\begin{talkbox}\scriptsize{HQs in glasma} \end{talkbox}};
+    % \end{tikzpicture}
+    % % \begin{tikzpicture}[overlay, remember picture]
+    % %     \node[anchor=north west] 
+    % %     at ([xshift=0.05cm,yshift=-5.6cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Sharma$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Fri 9:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-6.03cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Pandey$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 15:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-6.47cm]current page.north west) {\begin{talkbox}\scriptsize{HQs in overoccupied plasma} \end{talkbox}};
+    % \end{tikzpicture}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain,noframenumbering]
+    \frametitle{}
+    \begin{center}
+        \smartdiagramset{
+            planet size=3cm, 
+            satellite text width=2.2cm,
+            planet text width=2.0cm,
+            % distance planet-text=1.0,
+            distance planet-satellite=3.2cm,
+            /tikz/connection planet satellite/.append style={<-}
+        } 
+        \smartdiagram[constellation diagram]{
+            {\Large This talk}, {\footnotesize Glasma},{\footnotesize Jet broadening in glasma},{\footnotesize Jet quenching in glasma}, {\footnotesize Heavy quark diffusion in glasma}, {\footnotesize EKT}, Jets and heavy quarks during EKT
+        }
+    \end{center}
+    
+\end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%
