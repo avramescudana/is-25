@@ -8,6 +8,14 @@
 \usepackage{mathrsfs}  
 \usepackage{cancel}
 \usepackage{smartdiagram}
+\usesmartdiagramlibrary{additions}
+
+% \tikzset{myarrow/.style={-{Stealth[length=2.5mm,width=2.5mm]}, line width=1.5pt}}
+\tikzset{myarrow/.style={-Stealth}, line width=1.5pt}
+\tikzset{
+    myleftrightarrow/.style={Stealth-Stealth, line width=1.5pt}
+}
+
 % \usepackage{caption}
 % \usepackage{tikz}
 
@@ -55,6 +63,9 @@
 \definecolor{isred}{HTML}{81182d}
 \definecolor{hpred}{HTML}{712A27}
 \definecolor{hpblue}{HTML}{44545c}
+
+\definecolor{indicoplen}{HTML}{f8f2e8}
+\definecolor{indicopar}{HTML}{dfebff}
 
 \definecolor{customblue}{HTML}{3c9bb3}
 \definecolor{customgreen}{HTML}{117877}
@@ -210,6 +221,32 @@
     bottom=1pt,
     enlarge left by=-0.1cm,
     grow to right by=0.21cm,
+}
+\newtcolorbox{plentalkbox}{%
+    enhanced, frame hidden,%
+    colback=indicoplen!60,%
+    coltext=normal,
+    hbox,%
+    center title,%
+    breakable,%
+    titlerule=0pt,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+}
+\newtcolorbox{partalkbox}{%
+    enhanced, frame hidden,%
+    colback=indicopar!60,%
+    coltext=normal,
+    hbox,%
+    center title,%
+    breakable,%
+    titlerule=0pt,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
 }
 \newtcolorbox{talkbox}{%
     % enhanced jigsaw,%
@@ -665,14 +702,14 @@
         \column{.02\textwidth}
     \end{columns}
     \blfootnote{\scriptsize Berges, Heller, Mazeliauskas, Venugopalan \href{https://arxiv.org/abs/2005.12299}{{\color{palgold}\texttt{[2005.12299]$^\text{\scalebox{0.9}{\faExternalLink}}$}}} Schlichting, Teaney \href{https://arxiv.org/abs/1908.02113}{{\color{palgold}\texttt{[1908.02113]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Kurkela$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 14:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Effective kinetic theory} \end{talkbox}};
-    % \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{plentalkbox}\scriptsize{\color{destacado}Garcia-Montero$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{plentalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6632003/}{{\color{isgold}Initial state modelling$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{plentalkbox}};
+    \end{tikzpicture}
 \end{frame}
 
 \subsection{Initial stage}
@@ -769,22 +806,22 @@
     \blfootnote{\scriptsize Gelis, Iancu, Jalilian-Marian, Venugopalan \href{https://arxiv.org/abs/1002.0333}{{\color{palgold}\texttt{[1002.0333]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}  \\
      \hspace{13.5pt}
      Lappi \href{https://arxiv.org/abs/hep-ph/0606207}{{\color{palviolet}\texttt{[hep-ph/0606207]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Gelis \href{https://arxiv.org/abs/1211.3327}{{\color{palviolet}\texttt{[1211.3327]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Baier, Mueller, Schiff, Son \href{https://arxiv.org/abs/hep-ph/0009237}{{\color{palteal}\texttt{[hep-ph/0009237]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ruggieri$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Glasma fields} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-1.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Montero$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Fri 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-1.48cm]current page.north west) {\begin{talkbox}\scriptsize{Electromagnetic probes} \end{talkbox}};
-    % \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{plentalkbox}\scriptsize{\color{destacado}Werthmann$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Thu 14:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{plentalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6632063/}{{\color{isgold}From gluons to ideal fluid$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-1.1cm]current page.north west) {\begin{plentalkbox}\scriptsize{\color{destacado}Scheihing Hitschfeld$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Thu 14:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-1.53cm]current page.north west) {\begin{plentalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6632065/}{{\color{isgold}Thermalization at weak and strong coupling$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{plentalkbox}};
+    \end{tikzpicture}
 \end{frame}
 
 
@@ -806,14 +843,14 @@
     \frametitle{Jets as probes}
     \framesubtitle{Stages and scales of interest}
     \blfootnote{\scriptsize Apolinário \href{https://indico.cern.ch/event/1385550/}{{\color{jyured}\texttt{[CERN 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Apolinário$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 9:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Jets as probes of IS} \end{talkbox}};
-    % \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{plentalkbox}\scriptsize{\color{destacado}Sadofyev$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Thu 16:50$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{plentalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6632069/}{{\color{isgold}Jet quenching in small systems$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{plentalkbox}};
+    \end{tikzpicture}
 \end{frame}
 \setbeamertemplate{background}{}
 
@@ -924,42 +961,14 @@
     \end{columns}
     \vspace{-5pt}    
     \blfootnote{\scriptsize Ke \href{https://indico.cern.ch/event/1339555/contributions/6038190/}{{\color{jyured}\texttt{[Hard Probes 24]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Greco$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 15:15$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=north west] 
-    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{HQs transport} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=south east] 
-    %     at ([xshift=-0.05cm,yshift=1cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Scheihing$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=south east] 
-    %     at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Du Plessis$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=south east] 
-    %     at ([xshift=-0.05cm,yshift=0.15cm]current page.south east) {\begin{talkbox}\scriptsize{HQs at strong coupling} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=south east] 
-    %     at ([xshift=-0.05cm,yshift=1.63cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Scheihing$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 9:45$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=south east] 
-    %     at ([xshift=-0.05cm,yshift=1.2cm]current page.south east) {\begin{talkbox}\scriptsize{HQs at strong coupling} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=south east] 
-    %     at ([xshift=-0.05cm,yshift=0.58cm]current page.south east) {\begin{talkbox}\scriptsize{\color{destacado}Du Plessis$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Wed 16:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-    % \end{tikzpicture}
-    % \begin{tikzpicture}[overlay, remember picture]
-    %     \node[anchor=south east] 
-    %     at ([xshift=-0.05cm,yshift=0.16cm]current page.south east) {\begin{talkbox}\scriptsize{HQs in the hybrid model} \end{talkbox}};
-    % \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{plentalkbox}\scriptsize{\color{destacado}Sadofyev$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Thu 16:50$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{plentalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6632069/}{{\color{isgold}Heavy quarks in small systems$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{plentalkbox}};
+    \end{tikzpicture}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1098,6 +1107,28 @@
     % \end{tikzpicture}
 \end{frame}
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}[plain,noframenumbering]
+%     \frametitle{}
+%     \begin{center}
+%         \smartdiagramset{
+%             planet size=3cm, 
+%             satellite text width=2.2cm,
+%             planet text width=2.0cm,
+%             % distance planet-text=1.0,
+%             distance planet-satellite=3.2cm,
+%             /tikz/connection planet satellite/.append style={<-}
+%         } 
+%         \smartdiagram[constellation diagram]{
+%             {\Large This talk}, {\footnotesize Glasma},{\footnotesize Jet broadening in glasma},{\footnotesize Jet quenching in glasma}, {\footnotesize Heavy quark diffusion in glasma}, {\footnotesize EKT}, Jets and heavy quarks during EKT
+%         }
+%         % \smartdiagramconnect{->, bend right=15}{satellite3/satellite7}
+%     \end{center}
+% \end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1105,20 +1136,62 @@
 \begin{frame}[plain,noframenumbering]
     \frametitle{}
     \begin{center}
-        \smartdiagramset{
-            planet size=3cm, 
-            satellite text width=2.2cm,
-            planet text width=2.0cm,
-            % distance planet-text=1.0,
-            distance planet-satellite=3.2cm,
-            /tikz/connection planet satellite/.append style={<-}
-        } 
-        \smartdiagram[constellation diagram]{
-            {\Large This talk}, {\footnotesize Glasma},{\footnotesize Jet broadening in glasma},{\footnotesize Jet quenching in glasma}, {\footnotesize Heavy quark diffusion in glasma}, {\footnotesize EKT}, Jets and heavy quarks during EKT
-        }
+        \begin{figure}
+            \smartdiagramset{
+                bubble center node color=gray!20,      
+                set color list={isgold!40, palteal!30, palteal!30, palblue!30, palviolet!30}
+                }
+            \smartdiagramadd[bubble diagram]{
+                \textit{Hard probes} \\ in \textbf{pre-equilibrium}, \textit{\footnotesize\color{isgold}Part 1}\\\textbf{\Large\color{isgold} Glasma}, \textit{\color{palteal}Jet} momentum \\ broadening, \textit{\color{palteal}Jet} energy loss, \textit{\footnotesize\color{palblue}Part 2}\\\textbf{\Large\color{palblue} EKT}, \textit{\color{palviolet}Heavy quark}\\ diffusion
+            }{}
+            \begin{tikzpicture}[remember picture,overlay]
+                \draw[myarrow, draw=isgold!80, line width=1.5pt, bend right=15]
+                (module2) to (module3);
+                \draw[myarrow, draw=isgold!80, line width=1.5pt, bend left=15]
+                (module2) to (module6);
+                \draw[myarrow, draw=palblue!70, line width=1.5pt, bend left=15]
+                (module5) to (module4);
+                \draw[myarrow, draw=palblue!70, line width=1.5pt, bend right=15]
+                (module5) to (module6);
+                \draw[myleftrightarrow, draw=palteal!70, bend right=15]
+                (module3) to (module4);
+                % \draw[myarrow, draw=palteal!70, bend right=15]
+                % (module3) to (module4);
+                % \draw[myarrow, draw=palteal!70, bend left=15]
+                % (module4) to (module3);
+                % \draw[myarrow, draw=palviolet, line width=2pt, bend left=20, dashed]
+                % (module2) to (module6);
+            \end{tikzpicture}
+
+            % \smartdiagramconnect{{-latex},palteal,line width=2pt,bend left=20}{module2/module3}
+            % \smartdiagramconnect{<-}{module3/module2}
+        \end{figure}
     \end{center}
-    
 \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \setbeamertemplate{background}{
+% \tikz[overlay,remember picture] \node[opacity=0.1, at=(current page.center), align=center] {\\[10pt]
+% {\transparent{0.3}\includegraphics[height=0.8\paperheight]{images/fig1_overview.pdf}}};
+% }
+\begin{frame}[plain,noframenumbering]
+    \frametitle{}
+    \begin{center}
+        \begin{figure}
+            \smartdiagramset{
+                bubble center node color=gray!10,      
+                set color list={isgold!25}
+                }
+            \smartdiagramadd[bubble diagram]{
+                \textbf{Pre-equilibrium}, \textit{\footnotesize\color{isgold}Part 1}\\\textbf{\Large\color{isgold} Glasma}
+            }{}
+        \end{figure}
+    \end{center}
+\end{frame}
+% \setbeamertemplate{background}{}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%
@@ -1167,340 +1240,398 @@
 % %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
+\setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
 
-% \begin{frame}
-%     \frametitle{Color glass condensate}
-%     \framesubtitle{QCD at high energy and glasma fields}
-%     \vspace{-15pt}
-%     \begin{columns}[onlytextwidth,t]
-%        \column{.033\textwidth}
-%        \column{.35\textwidth}
+\begin{frame}
+    \frametitle{Color glass condensate}
+    \framesubtitle{QCD at high energy and glasma fields}
+    \vspace{-15pt}
+    \begin{columns}[onlytextwidth,t]
+       \column{.033\textwidth}
+       \column{.35\textwidth}
 
-%             \begin{center}
-%                 \footnotesize\color{lightgray}A high-energy nucleus contains \\ large numbers of {\bfseries\color{palviolet}soft gluons}
-%             \end{center}
-%             % \begin{itemize}\itemsep0em 
-%             %     \footnotesize\color{lightgray}
-%             %     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}}
-%             %     \item A high-energy nucleus contains mostly {\bfseries\color{palviolet}soft gluons}
-%             % \end{itemize}
+            \begin{center}
+                \footnotesize\color{lightgray}A high-energy nucleus contains \\ large numbers of {\bfseries\color{palviolet}soft gluons}
+            \end{center}
+            % \begin{itemize}\itemsep0em 
+            %     \footnotesize\color{lightgray}
+            %     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}}
+            %     \item A high-energy nucleus contains mostly {\bfseries\color{palviolet}soft gluons}
+            % \end{itemize}
 
-%             \vspace{0pt}
-%             \hspace{10pt}
-%             \begin{tikzpicture}[]
-%                 \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.9\textwidth]{images/CFNS_talk_Salazar-3_crop_edit_final_v2.png}};
-%                 \draw<1>[palviolet,line width=1pt,fill=palviolet,fill opacity=0.1,rounded corners=3pt] (2.2, 0) rectangle (4.8, 4.9);
-%             \end{tikzpicture}
-%         \column{.06\textwidth}
-%         \column{.55\textwidth}
+            \vspace{0pt}
+            \hspace{10pt}
+            \begin{tikzpicture}[]
+                \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.9\textwidth]{images/CFNS_talk_Salazar-3_crop_edit_final_v2.png}};
+                \draw<1>[palviolet,line width=1pt,fill=palviolet,fill opacity=0.1,rounded corners=3pt] (2.2, 0) rectangle (4.8, 4.9);
+            \end{tikzpicture}
+        \column{.06\textwidth}
+        \column{.55\textwidth}
 
-%             \vspace{0pt}
+            \vspace{0pt}
            
-%             \begin{custombox2}{Color glass condensate}{lightgray}
-%                 \small
-%                 \begin{varwidth}{0.92\textwidth}
-%                 \begin{itemize}\itemsep0em 
-%                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{lightgray}\blacktriangleright}$}}} 
-%                     \item 
-%                     Soft partons $\leftrightarrow$ {\color{palviolet}\bfseries gauge fields $\boldsymbol{A^\mu}$} generated \\ by the hard partons $\leftrightarrow$ {\color{palteal}\bfseries color current $\boldsymbol{J^\mu}$}
-%                 \end{itemize}
-%                 \end{varwidth}
-%             \end{custombox2}
+            \begin{custombox2}{Color glass condensate}{lightgray}
+                \small
+                \begin{varwidth}{0.92\textwidth}
+                \begin{itemize}\itemsep0em 
+                    \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{lightgray}\blacktriangleright}$}}} 
+                    \item 
+                    Soft partons $\leftrightarrow$ {\color{palviolet}\bfseries gauge fields $\boldsymbol{A^\mu}$} generated \\ by the hard partons $\leftrightarrow$ {\color{palteal}\bfseries color current $\boldsymbol{J^\mu}$}
+                \end{itemize}
+                \end{varwidth}
+            \end{custombox2}
 
-%             % \begin{itemize}\itemsep0em 
-%             %     \footnotesize\color{lightgray}
-%             %     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}}
-%             %     \item Classical {\color{palviolet}gluon fields} $\rightarrow$ produced\\ by color {\color{pallightblue}nucleus current}
-%             % \end{itemize}
-%             \begin{itemize}\itemsep0em 
-%                 \item Classical Yang-Mills equations
-%             \end{itemize}
-%             \vspace{20pt}
-%             \renewcommand{\eqnhighlightheight}{\vphantom{\mathcal{D}_\mu}\mathstrut}\begin{equation*}
-%                 \hspace{-40pt}\eqnmark[normal]{dmu}{\mathscr{D}_\mu}\hspace{-3pt}\eqnmark[normal]{fmunu}{F^{\mu\nu}}\hspace{-3pt}={\color{palteal}\boldsymbol{J^\nu}}
-%                 % {\color{lightgray}\rightarrow\,\text{input from CGC}} 
-%                 \end{equation*}
-%                 \annotate[yshift=+0.5em]{above, left}{dmu}{\scriptsize $\partial_\mu-\mathrm{i}g{\color{palviolet}\boldsymbol{A_\mu}}$}
-%                 \annotate[yshift=-0.1em]{below}{fmunu}{\scriptsize $\partial_\mu{\color{palviolet}\boldsymbol{A_\nu}}-\partial_\nu{\color{palviolet}\boldsymbol{A_\mu}}-\mathrm{i}g[{\color{palviolet}\boldsymbol{A_\mu}},{\color{palviolet}\boldsymbol{A_\nu}}]$}
-%             \vspace{5pt}
-%             {\footnotesize
-%             \begin{itemize}\itemsep0em 
-%                 % \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
-%                 \item \textit{Before collision:} CGC fields\\[1pt] 
-%                 {\color{lightgray} Analytical gluon field of a single nucleus}
-%                 \item \textit{After collision:} {\color{palgold}\bfseries glasma fields}\\[1pt] 
-%                 {\color{lightgray} Numerical gluon field of two colliding nuclei}
-%             \end{itemize}}
-%         \column{.033\textwidth}
-%     \end{columns}
-%     \blfootnote{\scriptsize Gelis, Iancu, Jalilian-Marian, Venugopalan \href{https://arxiv.org/abs/1002.0333}{{\color{palviolet}\texttt{[1002.0333]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Lappi \href{https://arxiv.org/abs/hep-ph/0602189}{{\color{palgold}\texttt{[hep-ph/0602189]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-% \end{frame}
+            % \begin{itemize}\itemsep0em 
+            %     \footnotesize\color{lightgray}
+            %     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}}
+            %     \item Classical {\color{palviolet}gluon fields} $\rightarrow$ produced\\ by color {\color{pallightblue}nucleus current}
+            % \end{itemize}
+            \begin{itemize}\itemsep0em 
+                \item Classical Yang-Mills equations
+            \end{itemize}
+            \vspace{20pt}
+            \renewcommand{\eqnhighlightheight}{\vphantom{\mathcal{D}_\mu}\mathstrut}\begin{equation*}
+                \hspace{-40pt}\eqnmark[normal]{dmu}{\mathscr{D}_\mu}\hspace{-3pt}\eqnmark[normal]{fmunu}{F^{\mu\nu}}\hspace{-3pt}={\color{palteal}\boldsymbol{J^\nu}}
+                % {\color{lightgray}\rightarrow\,\text{input from CGC}} 
+                \end{equation*}
+                \annotate[yshift=+0.5em]{above, left}{dmu}{\scriptsize $\partial_\mu-\mathrm{i}g{\color{palviolet}\boldsymbol{A_\mu}}$}
+                \annotate[yshift=-0.1em]{below}{fmunu}{\scriptsize $\partial_\mu{\color{palviolet}\boldsymbol{A_\nu}}-\partial_\nu{\color{palviolet}\boldsymbol{A_\mu}}-\mathrm{i}g[{\color{palviolet}\boldsymbol{A_\mu}},{\color{palviolet}\boldsymbol{A_\nu}}]$}
+            \vspace{5pt}
+            {\footnotesize
+            \begin{itemize}\itemsep0em 
+                % \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
+                \item \textit{Before collision:} CGC fields\\[1pt] 
+                {\color{lightgray} Analytical gluon field of a single nucleus}
+                \item \textit{After collision:} {\color{palgold}\bfseries glasma fields}\\[1pt] 
+                {\color{lightgray} Numerical gluon field of two colliding nuclei}
+            \end{itemize}}
+        \column{.033\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Gelis, Iancu, Jalilian-Marian, Venugopalan \href{https://arxiv.org/abs/1002.0333}{{\color{palviolet}\texttt{[1002.0333]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Lappi \href{https://arxiv.org/abs/hep-ph/0602189}{{\color{palgold}\texttt{[hep-ph/0602189]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{plentalkbox}\scriptsize{\color{destacado}Mäntysaari$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{plentalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6632020/}{{\color{isgold}Gluon saturation, CGC$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{plentalkbox}};
+    \end{tikzpicture}
+\end{frame}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}
-%     \frametitle{CGC fields before collision}
-%     \framesubtitle{McLerran-Venugopalan model for AA collisions}
-%     \vspace{-10pt}
-%     \begin{columns}[onlytextwidth,t]
-%         \column{.033\textwidth}
-%         \column{.4\textwidth}
+\begin{frame}
+    \frametitle{CGC fields before collision}
+    \framesubtitle{McLerran-Venugopalan model for AA collisions}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.033\textwidth}
+        \column{.4\textwidth}
 
-%         \begin{center}\itemsep0em 
-%             \footnotesize\color{lightgray} Color charge distribution for a nucleus\\ at high energy in a {\bfseries \color{palviolet}thin color sheet}
-%         \end{center}
+        \begin{center}\itemsep0em 
+            \footnotesize\color{lightgray} Color charge distribution for a nucleus\\ at high energy in a {\bfseries \color{palviolet}thin color sheet}
+        \end{center}
 
-%         \begin{figure}
-%             \centering
-%             \includegraphics[width=0.9\textwidth]{images/sheets1.pdf}
-%         \end{figure}
-%        \column{.033\textwidth}
-%        \column{.5\textwidth}
-%        \vspace{-5pt}
-%         \begin{custombox2}{MV model}{lightgray}
-%             \small
-%             \begin{varwidth}{0.96\textwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palteal}\blacktriangleright}$}}} 
-%                 \item {\color{palteal}\bfseries Color current} of nucleus $\rightarrow$ generated by \\{\color{palgold}\bfseries color charge} $\color{palgold}\boldsymbol{\rho}$ $\leftrightarrow$ stochastic variable
-%             \end{itemize}
-%             \end{varwidth}
-%         \end{custombox2}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\textwidth]{images/sheets1.pdf}
+        \end{figure}
+       \column{.033\textwidth}
+       \column{.5\textwidth}
+       \vspace{-5pt}
+        \begin{custombox2}{MV model}{lightgray}
+            \small
+            \begin{varwidth}{0.96\textwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palteal}\blacktriangleright}$}}} 
+                \item {\color{palteal}\bfseries Color current} of nucleus $\rightarrow$ generated by \\{\color{palgold}\bfseries color charge} $\color{palgold}\boldsymbol{\rho}$ $\leftrightarrow$ stochastic variable
+            \end{itemize}
+            \end{varwidth}
+        \end{custombox2}
 
-%         % \begin{itemize}\itemsep0em 
-%         %     \footnotesize\color{lightgray}
-%         %     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}}
-%         %     \item {\color{palteal}Color current} of nucleus $\rightarrow$ generated\\ by {\color{palgold} color charge} density
-%         % \end{itemize}
-%         \begin{itemize}\itemsep0em 
-%             \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}}
-%             \item {\bfseries\color{palgold} MV model} for color charges ${\color{palgold}\boldsymbol{\rho}}$
-%         \end{itemize}
-%         \vspace{5pt}
-%         \renewcommand{\eqnhighlightheight}{\vphantom{\mathcal{D}_\mu}\mathstrut}\begin{equation*}
-%             \big\langle{\color{palgold}\boldsymbol{\rho}}(\vec{x}_\perp){\color{palgold}\boldsymbol{\rho}}(\vec{y}_\perp)\big\rangle\propto\hspace{-3pt}\eqnmark[normal]{g2mu}{{\color{palviolet}\boldsymbol{g^2\mu}}}\hspace{-3pt}^2\delta^{(2)}(\vec{x}_\perp-\vec{y}_\perp)
-%             \end{equation*}
-%             \annotate[yshift=-0.7em]{below, right}{g2mu}{\scriptsize ${\color{palviolet}\boldsymbol{g^2\mu}}\propto{\color{palviolet}\boldsymbol{Q_s}}$}
-%             \vspace{5pt}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palviolet}\blacktriangleright}$}}}
-%                 \item {\color{palviolet}\bfseries Saturation momentum $\boldsymbol{Q_s}$} \\{\scriptsize\color{lightgray} $Q_s\approx 2\,\mathrm{GeV}$ at LHC central collisions}
-%             \end{itemize}    
-%         \begin{itemize}\itemsep0em 
-%             \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{jyured}\blacktriangleright}$}}}
-%             \item {\bfseries\color{jyured}Glasma improvements}: {\bfseries\color{palgold} proton/nuclear structure} by modelling ${\color{palgold}\boldsymbol{\rho}}(\vec{x}_\perp)$ 
-%         \end{itemize}      
-%         \column{.033\textwidth}
-%     \end{columns}
-%     \blfootnote{\scriptsize McLerran, Venugopalan \href{https://arxiv.org/abs/hep-ph/9309289}{{\color{palgold}\texttt{[hep-ph/9309289]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Müller \href{https://arxiv.org/abs/1904.04267}{{\color{palviolet}\texttt{[1904.04267]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-% \end{frame}
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{frame}
-%     \frametitle{Collision of CGC fields}
-%     \framesubtitle{How to obtain the glasma fields}
-%     \vspace{-5pt}
-%     \begin{columns}[onlytextwidth,t]
-%         \column{.033\textwidth}
-%         \column{.4\textwidth}
-
-%         \begin{itemize}\itemsep0em 
-%             \item Light-cone diagram of collision\\
-%             {\scriptsize\color{lightgray} Light-cone coordinates $x^\pm=t\pm z$}
-%         \end{itemize}
-%         \begin{tikzpicture}[]
-%             \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\textwidth]{images/spacetb.eps}};
-%             \node[isosceles triangle,
-%                 isosceles triangle apex angle=90,
-%                 draw=palviolet,opacity=0.05,
-%                 fill=palviolet,fill opacity=0.1,
-%                 minimum size =2cm] (T90)at (1.8,2.2){};
-%             \node[isosceles triangle,
-%                 isosceles triangle apex angle=90,
-%                 draw=palviolet,opacity=0.05,
-%                 fill=palviolet,fill opacity=0.1,
-%                 rotate=180,
-%                 minimum size =2cm] (T90)at (4.25,2.2){};
-%             \node[isosceles triangle,
-%                 isosceles triangle apex angle=90,
-%                 draw=palgold,opacity=0.05,line width=1pt,
-%                 fill=palgold,fill opacity=0.1,
-%                 rotate=270,
-%                 minimum size =2cm] (T90)at (3.03,3.43){};
-%         \end{tikzpicture}
-
-%        \column{.05\textwidth}
-%        \column{.5\textwidth}
-%         \begin{custombox2}{{\normalsize CGC fields} {\tiny (regions 1, 2)}}{palviolet}
-%             \small
-%             \begin{varwidth}{0.93\textwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palviolet}\blacktriangleright}$}}} 
-%                 \footnotesize
-%                 \item Analytical {\color{red}\bfseries pure gauge} fields before collision
-%                 % \item Weizsäcker–Williams gluon distribution
-%             \end{itemize}
-%             \end{varwidth}
-%         \end{custombox2}
-
-%         \begin{custombox2}{{\normalsize Initial condition} {\tiny (along light-cone)}}{normal}
-%             \small
-%             \begin{varwidth}{0.93\textwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
-%                 \footnotesize
-%                 \item Match CGC fields on the light cone
-%                 \item Impose {\bfseries boost-invariance} $\Rightarrow$ 2+1D fields\\
-%                 {\tiny\color{lightgray} Milne coordinates {\color{Blue}$\tau=\sqrt{x^+x^-}$} and {\color{ForestGreen}$\eta=\mathrm{ln}(x^+/x^-)$}}
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{jyured}\blacktriangleright}$}}} 
-%                 \footnotesize
-%                 \item {\bfseries\color{jyured}Glasma improvements}: 3+1D fields
-%             \end{itemize}
-%             \end{varwidth}
-%         \end{custombox2}
-
-%         \begin{custombox2}{{\normalsize Glasma fields} {\tiny (region 3)}}{palgold}
-%             \small
-%             \begin{varwidth}{0.93\textwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}} 
-%                 \footnotesize
-%                 \item Numerically solve CYM equations on lattice
-%                 \item Real-time lattice gauge theory techniques \\
-%                 {\tiny\color{lightgray} Discretize with gauge link and plaquette variables}
-%             \end{itemize}
-%             \end{varwidth}
-%         \end{custombox2}
-%         \column{.033\textwidth}
-%     \end{columns}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Mrowczynski$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 9:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Glasma in $\tau$ expansion} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-1.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ipp$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 14:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-1.48cm]current page.north west) {\begin{talkbox}\scriptsize{3+1D glasma} \end{talkbox}};
-%     \end{tikzpicture}
-%     \vspace{-10pt}
-%     \blfootnote{\scriptsize Lappi \href{https://arxiv.org/abs/hep-ph/0602189}{{\color{palgold}\texttt{[hep-ph/0602189]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-% \end{frame}
+        % \begin{itemize}\itemsep0em 
+        %     \footnotesize\color{lightgray}
+        %     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}}
+        %     \item {\color{palteal}Color current} of nucleus $\rightarrow$ generated\\ by {\color{palgold} color charge} density
+        % \end{itemize}
+        \begin{itemize}\itemsep0em 
+            \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}}
+            \item {\bfseries\color{palgold} MV model} for color charges ${\color{palgold}\boldsymbol{\rho}}$
+        \end{itemize}
+        \vspace{5pt}
+        \renewcommand{\eqnhighlightheight}{\vphantom{\mathcal{D}_\mu}\mathstrut}\begin{equation*}
+            \big\langle{\color{palgold}\boldsymbol{\rho}}(\vec{x}_\perp){\color{palgold}\boldsymbol{\rho}}(\vec{y}_\perp)\big\rangle\propto\hspace{-3pt}\eqnmark[normal]{g2mu}{{\color{palviolet}\boldsymbol{g^2\mu}}}\hspace{-3pt}^2\delta^{(2)}(\vec{x}_\perp-\vec{y}_\perp)
+            \end{equation*}
+            \annotate[yshift=-0.7em]{below, right}{g2mu}{\scriptsize ${\color{palviolet}\boldsymbol{g^2\mu}}\propto{\color{palviolet}\boldsymbol{Q_s}}$}
+            \vspace{5pt}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palviolet}\blacktriangleright}$}}}
+                \item {\color{palviolet}\bfseries Saturation momentum $\boldsymbol{Q_s}$} \\{\scriptsize\color{lightgray} $Q_s\approx 2\,\mathrm{GeV}$ at LHC central collisions}
+            \end{itemize}    
+        \begin{itemize}\itemsep0em 
+            \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}}
+            \item {\bfseries\color{palgold} Nuclear structure} or impact parameter dependence in ${\color{palgold}\boldsymbol{\rho}}(\vec{x}_\perp)$  $\rightarrow$ IP-Glasma
+        \end{itemize}      
+        \column{.033\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize McLerran, Venugopalan \href{https://arxiv.org/abs/hep-ph/9309289}{{\color{palgold}\texttt{[hep-ph/9309289]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Müller \href{https://arxiv.org/abs/1904.04267}{{\color{palviolet}\texttt{[1904.04267]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{plentalkbox}\scriptsize{\color{destacado}Christiansen$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 11:20$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{plentalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6632022/}{{\color{isgold}Gluon saturation$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{plentalkbox}};
+    \end{tikzpicture}
+\end{frame}
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%% SUBSECTION %%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \subsection{Features}
+\begin{frame}
+    \frametitle{Collision of CGC fields}
+    \framesubtitle{How to obtain the glasma fields}
+    \vspace{-15pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.033\textwidth}
+        \column{.4\textwidth}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \begin{itemize}\itemsep0em 
+            \item Light-cone diagram of collision\\
+            {\scriptsize\color{lightgray} Light-cone coordinates $x^\pm=t\pm z$}
+        \end{itemize}
+        \begin{tikzpicture}[]
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\textwidth]{images/spacetb.eps}};
+            \node[isosceles triangle,
+                isosceles triangle apex angle=90,
+                draw=palviolet,opacity=0.05,
+                fill=palviolet,fill opacity=0.1,
+                minimum size =2cm] (T90)at (1.8,2.2){};
+            \node[isosceles triangle,
+                isosceles triangle apex angle=90,
+                draw=palviolet,opacity=0.05,
+                fill=palviolet,fill opacity=0.1,
+                rotate=180,
+                minimum size =2cm] (T90)at (4.25,2.2){};
+            \node[isosceles triangle,
+                isosceles triangle apex angle=90,
+                draw=palgold,opacity=0.05,line width=1pt,
+                fill=palgold,fill opacity=0.1,
+                rotate=270,
+                minimum size =2cm] (T90)at (3.03,3.43){};
+        \end{tikzpicture}
 
-% \begin{frame}
-%     \frametitle{Features of the glasma}
-%     \begin{itemize}\itemsep0em 
-%         \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{destacado}\blacktriangleright}$}}} 
-%         \item \begin{center}Physics of glasma determined by the {\bfseries saturation momentum} $\boldsymbol{Q_s}$\end{center}
-%     \end{itemize}
-%     \vspace{-10pt}
-%     \begin{columns}[onlytextwidth,t]
-%         \column{.025\textwidth}
-%         \column{.3\textwidth}
+       \column{.05\textwidth}
+       \column{.5\textwidth}
+        \begin{custombox2}{{\normalsize CGC fields} {\tiny (regions 1, 2)}}{palviolet}
+            \small
+            \begin{varwidth}{0.93\textwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palviolet}\blacktriangleright}$}}} 
+                \footnotesize
+                \item Analytical {\color{red}\bfseries pure gauge} fields before collision
+                % \item Weizsäcker–Williams gluon distribution
+            \end{itemize}
+            \end{varwidth}
+        \end{custombox2}
 
-%         \begin{custombox2}{{\normalsize Flux tubes}}{palteal}
-%             \begin{varwidth}{0.99\columnwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palteal}\blacktriangleright}$}}} 
-%                 \scriptsize
-%                 \item Initially only longitudinal electric and magnetic fields
-%             \end{itemize}
-%             \end{varwidth}
-%         \end{custombox2}
+        \begin{custombox2}{{\normalsize Initial condition} {\tiny (along light-cone)}}{normal}
+            \small
+            \begin{varwidth}{0.93\textwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
+                \footnotesize
+                \item Match CGC fields on the light cone
+                \item Impose {\bfseries boost-invariance} $\Rightarrow$ 2+1D fields\\
+                {\tiny\color{lightgray} Milne coordinates {\color{Blue}$\tau=\sqrt{x^+x^-}$} and {\color{ForestGreen}$\eta=\mathrm{ln}(x^+/x^-)$}}
+                % \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{jyured}\blacktriangleright}$}}} 
+                % \footnotesize
+                % \item {\bfseries\color{jyured}Glasma improvements}: 3+1D fields
+            \end{itemize}
+            \end{varwidth}
+        \end{custombox2}
 
-%        \column{.025\textwidth}
-%        \column{.3\textwidth}
-%        \begin{custombox2}{{\normalsize Strong fields}}{palviolet}
-%             \begin{varwidth}{0.95\columnwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palviolet}\blacktriangleright}$}}} 
-%                 \scriptsize
-%                 \item Strong longitudinal fields dilute after $\tau\sim 1/\boldsymbol{Q_s}$
-%             \end{itemize}
-%             \end{varwidth}
-%         \end{custombox2}
+        \begin{custombox2}{{\normalsize Glasma fields} {\tiny (region 3)}}{palgold}
+            \small
+            \begin{varwidth}{0.93\textwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}} 
+                \footnotesize
+                \item {\bfseries Numerical} solutions of CYM on lattice \\
+                {\tiny\color{lightgray} Real-time lattice gauge theory techniques}
+                \item {\bfseries Analytical} solutions of approximate CYM \\
+                {\tiny\color{lightgray} Proper time $\tau$ expansion, linearized CYM in dilute limit}
+            \end{itemize}
+            \end{varwidth}
+        \end{custombox2}
+        \column{.033\textwidth}
+    \end{columns}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Mrowczynski$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 9:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Glasma in $\tau$ expansion} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-1.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ipp$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 14:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-1.48cm]current page.north west) {\begin{talkbox}\scriptsize{3+1D glasma} \end{talkbox}};
+    % \end{tikzpicture}
+    \vspace{-10pt}
+    \blfootnote{\scriptsize Lappi \href{https://arxiv.org/abs/hep-ph/0602189}{{\color{palgold}\texttt{[hep-ph/0602189]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Kovner, McLerran, Weigert \href{https://arxiv.org/abs/hep-ph/9505320}{{\color{palgold}\texttt{[hep-ph/9505320]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}\\
+    \hspace{13.5pt} Chen, Fries, Kapusta, Li \href{https://arxiv.org/abs/1507.03524}{{\color{palgold}\texttt{[1507.03524]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} }
+\end{frame}
 
-%         \column{.025\textwidth}
-%         \column{.3\textwidth}
-%         \begin{custombox2}{{\normalsize Correlation domains}}{palgold}
-%             \begin{varwidth}{0.99\columnwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}} 
-%                 \scriptsize
-%                 \item Fields correlated inside\\ flux tubes of size $\sim 1/\boldsymbol{Q_s}$ 
-%             \end{itemize}
-%             \end{varwidth}
-%         \end{custombox2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% SUBSECTION %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Features}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+    \frametitle{Features of the glasma}
+    \begin{itemize}\itemsep0em 
+        \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{destacado}\blacktriangleright}$}}} 
+        \item \begin{center}Physics of glasma determined by the {\bfseries saturation momentum} $\boldsymbol{Q_s}$\end{center}
+    \end{itemize}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.025\textwidth}
+        \column{.3\textwidth}
+
+        \begin{custombox2}{{\normalsize Flux tubes}}{palteal}
+            \begin{varwidth}{0.99\columnwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palteal}\blacktriangleright}$}}} 
+                \scriptsize
+                \item Initially only longitudinal electric and magnetic fields
+            \end{itemize}
+            \end{varwidth}
+        \end{custombox2}
+
+       \column{.025\textwidth}
+       \column{.3\textwidth}
+       \begin{custombox2}{{\normalsize Strong fields}}{palviolet}
+            \begin{varwidth}{0.95\columnwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palviolet}\blacktriangleright}$}}} 
+                \scriptsize
+                \item Strong longitudinal fields dilute after $\tau\sim 1/\boldsymbol{Q_s}$
+            \end{itemize}
+            \end{varwidth}
+        \end{custombox2}
+
+        \column{.025\textwidth}
+        \column{.3\textwidth}
+        \begin{custombox2}{{\normalsize Correlation domains}}{palgold}
+            \begin{varwidth}{0.99\columnwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}} 
+                \scriptsize
+                \item Fields correlated inside\\ flux tubes of size $\sim 1/\boldsymbol{Q_s}$ 
+            \end{itemize}
+            \end{varwidth}
+        \end{custombox2}
  
-%         \column{.025\textwidth}
-%     \end{columns}
+        \column{.025\textwidth}
+    \end{columns}
 
-%     \begin{columns}[onlytextwidth,t]
-%         \column{.3\textwidth}
+    \begin{columns}[onlytextwidth,t]
+        \column{.3\textwidth}
 
-%         \vspace{5pt}
-%         \begin{center}
-%             \begin{figure}
-%                 \centering
-%                 \hspace{-5pt}\includegraphics[width=0.9\textwidth]{images/glasma.eps}
-%             \end{figure}
-%         \end{center}
+        \vspace{5pt}
+        \begin{center}
+            \begin{figure}
+                \centering
+                \hspace{-5pt}\includegraphics[width=0.9\textwidth]{images/glasma.eps}
+            \end{figure}
+        \end{center}
 
-%        \column{.025\textwidth}
-%        \column{.3\textwidth}
-%         \begin{center}
-%             \begin{figure}
-%                 \centering
-%                 \hspace{-5pt}\includegraphics[width=0.9\textwidth]{images/components.eps}
-%             \end{figure}
-%         \end{center}
+       \column{.025\textwidth}
+       \column{.3\textwidth}
+        \begin{center}
+            \begin{figure}
+                \centering
+                \hspace{-5pt}\includegraphics[width=0.9\textwidth]{images/components.eps}
+            \end{figure}
+        \end{center}
 
-%         \column{.025\textwidth}
-%         \column{.3\textwidth}
-%         \begin{center}
-%             \begin{figure}
-%                 \centering
-%                 \includegraphics[width=0.7\textwidth]{images/1-s2.0-S0370269320306134-gr003_lrg.jpg}
-%             \end{figure}
-%         \end{center}
+        \column{.025\textwidth}
+        \column{.3\textwidth}
+        \begin{center}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.7\textwidth]{images/1-s2.0-S0370269320306134-gr003_lrg.jpg}
+            \end{figure}
+        \end{center}
 
-%         \column{.05\textwidth}
-%     \end{columns}
-%     \blfootnote{\scriptsize Fukushima \href{https://arxiv.org/abs/1603.02340}{{\color{palteal}\texttt{[1603.02340]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Lappi \href{https://arxiv.org/abs/hep-ph/0606207}{{\color{palviolet}\texttt{[hep-ph/0606207]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Ipp, Müller, Schuh \href{https://arxiv.org/abs/2009.14206}{{\color{palgold}\texttt{[2009.14206]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
-%     }
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ruggieri$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Glasma properties} \end{talkbox}};
-%     \end{tikzpicture}
-% \end{frame}
+        \column{.05\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Fukushima \href{https://arxiv.org/abs/1603.02340}{{\color{palteal}\texttt{[1603.02340]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Lappi \href{https://arxiv.org/abs/hep-ph/0606207}{{\color{palviolet}\texttt{[hep-ph/0606207]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Ipp, Müller, Schuh \href{https://arxiv.org/abs/2009.14206}{{\color{palgold}\texttt{[2009.14206]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+    }
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ruggieri$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Glasma properties} \end{talkbox}};
+    % \end{tikzpicture}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain,noframenumbering]
+    \frametitle{}
+    \begin{center}
+        \begin{figure}
+            \smartdiagramset{
+                bubble center node color=gray!20,      
+                set color list={isgold!40, palteal!30, palviolet!30}
+                }
+            \smartdiagramadd[bubble diagram]{
+                \textit{Hard probes} \\ in \textbf{pre-equilibrium}, \textit{\footnotesize\color{isgold}Part 1}\\\textbf{\Large\color{isgold} Glasma}, \textit{\color{palteal}Jet} momentum \\ broadening, \textit{\color{palviolet}Heavy quark}\\ diffusion
+            }{}
+            \begin{tikzpicture}[remember picture,overlay]
+                \draw[myarrow, draw=isgold!80, line width=1.5pt, bend right=40]
+                (module2) to (module3);
+                \draw[myarrow, draw=isgold!80, line width=1.5pt, bend left=40]
+                (module2) to (module4);
+                % \draw[myarrow, draw=palblue!70, line width=1.5pt, bend left=15]
+                % (module5) to (module4);
+                % \draw[myarrow, draw=palblue!70, line width=1.5pt, bend right=15]
+                % (module5) to (module6);
+                % \draw[myleftrightarrow, draw=palteal!70, bend right=15]
+                % (module3) to (module4);
+                % \draw[myarrow, draw=palteal!70, bend right=15]
+                % (module3) to (module4);
+                % \draw[myarrow, draw=palteal!70, bend left=15]
+                % (module4) to (module3);
+                % \draw[myarrow, draw=palviolet, line width=2pt, bend left=20, dashed]
+                % (module2) to (module6);
+            \end{tikzpicture}
+
+            % \smartdiagramconnect{{-latex},palteal,line width=2pt,bend left=20}{module2/module3}
+            % \smartdiagramconnect{<-}{module3/module2}
+        \end{figure}
+    \end{center}
+\end{frame}
 
 
 % \begin{frame}
@@ -1592,9 +1723,9 @@
 % \end{frame}
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% SECTION %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \section{Transport in glasma}
 
@@ -1617,132 +1748,141 @@
 % \end{frame}
 % \setbeamertemplate{background}{}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \setbeamertemplate{background}{
-% \tikz[overlay,remember picture] \node[at=(current page.center), align=center] {\\[20pt]
-% {\includegraphics[width=0.95\paperwidth]{images/traj_charm_beauty.png}}};
-% }
-% \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
-% \begin{frame}[plain, noframenumbering]
-%     \frametitle{\\ Heavy quarks and jets in glasma}
-%     \framesubtitle{Probing the glasma fields}
-%     \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2303.05599}{{\color{palgold}\texttt{[2303.05599]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-% \end{frame}
-% \setbeamertemplate{background}{}
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%% SUBSECTION %%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \subsection{Classical transport}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{frame}
-%     \frametitle{Particles in Yang-Mills fields}
-%     \framesubtitle{Wong's equations of motion}
-%         \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{ming}\blacktriangleright}$}}} 
-%    \begin{center}
-%     \begin{custombox2}{Classical transport equations}{lightgray}
-%         \small
-%         \begin{varwidth}{0.68\textwidth}
-%         \begin{itemize}\itemsep0em 
-%             \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{lightgray}\blacktriangleright}$}}} 
-%             \item Wong's equations $\leftrightarrow$ classical equations of motion for particles\\
-%             $({\color{customblue}x^\mu},{\color{customred}p^\mu},{\color{customyellow}Q})$ evolving in a Yang-Mills background field ${\color{starrysecond}A^\mu}$
-%         \end{itemize}
-%         \end{varwidth}
-%     \end{custombox2}
-
-%     %    Wong's equations $\leftrightarrow$ classical equations of motion for particles $({\color{customblue}x^\mu},{\color{customred}p^\mu},{\color{customyellow}Q})$ \\
-%     % evolving in a Yang-Mills background field ${\color{starrysecond}A^\mu}$
-%    \end{center} 
-%         \vspace{1cm}
-%         \renewcommand{\eqnhighlightheight}{\vphantom{x}}
-%         \begin{equation*}
-%             \frac{\d}{\d\hspace{-0.1cm}\eqnmark[destacado]{tau}{\boldsymbol{\tau}}\hspace{-0.2cm}}\eqnmark[customblue]{xmu}{x^\mu}=\frac{{\color{customred}p^\mu}}{\eqnmark[destacado]{m}{m}},\qquad \frac{\mathrm{d}}{\d\boldsymbol{\tau}}\hspace{-0.1cm}\eqnmark[customred]{pmu}{p^\mu}=\eqnmark[destacado]{tr}{\dfrac{1}{\color{lightgray}T_R}}\hspace{-0.1cm}\eqnmark[destacado]{g}{g}\tr{{\color{customyellow}Q}F^{\mu\nu}[\hspace{-0.1cm}\eqnmark[starrysecond]{amu}{A^\mu}\hspace{-0.1cm}]}\frac{{\color{customred}p_\nu}}{m},\qquad 
-%             \underbrace{\frac{\d}{\d\boldsymbol{\tau}}\hspace{-0.1cm}\eqnmark[customyellow]{Q}{Q}\hspace{-0.1cm}=-\mathrm{i}g [{\color{starrysecond}A_\mu},{\color{customyellow}Q}]\,\frac{{\color{customred}p^\mu}}{m}}_{\substack{\text{\footnotesize color rotation}\,\rightarrow\,{\color{customgreen}\mathcal{U}}\in\,\mathrm{SU(3)} \\[0.2cm] {\color{customyellow}Q}(\boldsymbol{\tau})=\,{\color{customgreen}\mathcal{U}}(\boldsymbol{\tau},\boldsymbol{\tau}^\prime){\color{customyellow}Q}(\boldsymbol{\tau^\prime})\,{\color{customgreen}\mathcal{U}^\dagger}(\boldsymbol{\tau},\boldsymbol{\tau}^\prime)}}
-%             \end{equation*}
-%             \annotate[yshift=1.2em]{above}{xmu}{coordinate}
-%             \annotate[yshift=1.2em]{above}{pmu}{momentum}
-%             \annotate[yshift=-0.5em]{below, right}{m}{\tiny mass}
-%             % \annotate[yshift=-1.5em]{below, right}{Ddtau}{\tiny covariant derivative}
-%             \annotate[yshift=-1.5em]{below, right}{tr}{\tiny\color{lightgray} $\mathrm{Tr}\{T^aT^b\}=T_R\delta^{ab}$}
-%             \annotate[yshift=-1.5em]{below, right}{tau}{\tiny proper time}
-%             \annotate[yshift=-0.7em]{below, right}{g}{\tiny coupling constant}
-%             \annotate[yshift=1.2em]{above}{Q}{color charge}
-%             \annotate[yshift=1.2em]{above, right}{amu}{gauge field}
-
-%     \begin{itemize}\itemsep0em 
-%         \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.7}{${\color{starrysecond}\blacktriangleright}$}}} 
-%         \item \begin{center}\footnotesize Solve the classical transport equations with {\color{starrysecond}$A^\mu$} the {\color{starrysecond}glasma field}\end{center} 
-%         \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}} 
-%         \item \begin{center}\footnotesize Color rotation conserves ${\color{palgold}q_{2}}=Q^aQ^a$ and ${\color{palgold}q_3}=d_{abc}Q^aQ^bQ^c$ {\color{palgold}SU($3$) Casimir invariants} \end{center} 
-%     \end{itemize}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ruggieri$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
-%     \end{tikzpicture}
-%     \begin{tikzpicture}[overlay, remember picture]
-%         \node[anchor=north west] 
-%         at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Wong's equations} \end{talkbox}};
-%     \end{tikzpicture}
-% \end{frame}
+\begin{frame}[plain, noframenumbering]
+    \frametitle{\\ Heavy quarks and jets in glasma}
+    \framesubtitle{Diffusion and momentum broadening}
+    \vspace{10pt}
+    \begin{center}
+        \begin{itemize}\itemsep0em 
+            \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{destacado}\blacktriangleright}$}}} 
+            \item \begin{center}Classical transport for {\bfseries\color{palviolet}heavy quarks} and  {\bfseries\color{palteal}jets} in glasma fields, no back-reaction\end{center}
+        \end{itemize}
+        \vspace{10pt}
+        \begin{tikzpicture}[]
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\textwidth]{images/traj_charm_beauty.png}};
+            \draw<1>[palviolet,line width=1pt,fill=palviolet,fill opacity=0.1,rounded corners=3pt] (0.0, 0) rectangle (9.4, 5.2);
+            \draw<1>[palteal,line width=1pt,fill=palteal,fill opacity=0.1,rounded corners=3pt] (9.6, 0) rectangle (15.2, 5.2);
+        \end{tikzpicture}
+    \end{center}
+    \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2303.05599}{{\color{palgold}\texttt{[2303.05599]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+\end{frame}
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% SUBSECTION %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}
-%     \frametitle{Particles in glasma fields}
-%     \framesubtitle{Visualizing the trajectories}
-%     \vspace{-0.5cm}
-%     \begin{columns}[onlytextwidth,t]
-%         \column{.025\textwidth}
-%        \column{.3\textwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
-%                 \item \begin{center}\footnotesize Change in {\bfseries coordinates} due to momentum kicks\end{center}
-%             \end{itemize}
-%                 \vspace{-20pt}
-%                 \begin{figure}[!hbt]
-%                     \centering
-%                 \includegraphics[width=1.1\columnwidth]{images/wong_coord.png}
-%                 \end{figure}
-%                 \column{.025\textwidth}
-%         \column{.3\textwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
-%                 \item \begin{center}\footnotesize {\bfseries Momentum} broadening due to color Lorentz force\end{center}
-%             \end{itemize}
-%             \vspace{-20pt}
-%             \begin{figure}[!hbt]
-%                 \centering
-%                 \includegraphics[width=1.1\columnwidth]{images/wong_mom.png}
-%             \end{figure}
-%             \column{.025\textwidth}
-%         \column{.3\textwidth}
-%             \begin{itemize}\itemsep0em 
-%                 \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
-%                 \item \begin{center}\footnotesize {\bfseries Color charge} rotation in SU(3) with Wilson lines\end{center}
-%             \end{itemize}
-%             \vspace{-15pt}
-%             \begin{figure}[!hbt]
-%                 \centering
-%                 \includegraphics[width=1.05\columnwidth]{images/wong_charge.png}
-%             \end{figure}
-%             \column{.025\textwidth}
-%     \end{columns}
+\subsection{Classical transport}
 
-%     \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2303.05599}{{\color{palgold}\texttt{[2303.05599]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+    \frametitle{Particles in Yang-Mills fields}
+    \framesubtitle{Wong's equations of motion}
+        \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{ming}\blacktriangleright}$}}} 
+   \begin{center}
+    \begin{custombox2}{Classical transport equations}{lightgray}
+        \small
+        \begin{varwidth}{0.68\textwidth}
+        \begin{itemize}\itemsep0em 
+            \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palteal}\blacktriangleright}$}}} 
+            \item {\color{palteal}Wong's equations} $\leftrightarrow$ classical equations of motion for particles\\
+            $({\color{customblue}x^\mu},{\color{customred}p^\mu},{\color{customyellow}Q})$ evolving in a Yang-Mills background field ${\color{starrysecond}A^\mu}$
+        \end{itemize}
+        \end{varwidth}
+    \end{custombox2}
+
+    %    Wong's equations $\leftrightarrow$ classical equations of motion for particles $({\color{customblue}x^\mu},{\color{customred}p^\mu},{\color{customyellow}Q})$ \\
+    % evolving in a Yang-Mills background field ${\color{starrysecond}A^\mu}$
+   \end{center} 
+        \vspace{1cm}
+        \renewcommand{\eqnhighlightheight}{\vphantom{x}}
+        \begin{equation*}
+            \frac{\d}{\d\hspace{-0.1cm}\eqnmark[destacado]{tau}{\boldsymbol{\tau}}\hspace{-0.2cm}}\eqnmark[customblue]{xmu}{x^\mu}=\frac{{\color{customred}p^\mu}}{\eqnmark[destacado]{m}{m}},\qquad \frac{\mathrm{d}}{\d\boldsymbol{\tau}}\hspace{-0.1cm}\eqnmark[customred]{pmu}{p^\mu}=\dfrac{1}{T_R}\hspace{-0.1cm}\eqnmark[destacado]{g}{g}\tr{{\color{customyellow}Q}F^{\mu\nu}[\hspace{-0.1cm}\eqnmark[starrysecond]{amu}{A^\mu}\hspace{-0.1cm}]}\frac{{\color{customred}p_\nu}}{m},\qquad 
+            \underbrace{\frac{\d}{\d\boldsymbol{\tau}}\hspace{-0.1cm}\eqnmark[customyellow]{Q}{Q}\hspace{-0.1cm}=-\mathrm{i}g [{\color{starrysecond}A_\mu},{\color{customyellow}Q}]\,\frac{{\color{customred}p^\mu}}{m}}_{\text{\footnotesize color rotation}}
+            \end{equation*}
+            \annotate[yshift=1.2em]{above}{xmu}{coordinate}
+            \annotate[yshift=1.2em]{above}{pmu}{momentum}
+            \annotate[yshift=-0.5em]{below, right}{m}{\tiny mass}
+            % \annotate[yshift=-1.5em]{below, right}{Ddtau}{\tiny covariant derivative}
+            % \annotate[yshift=-1.5em]{below, right}{tr}{\tiny\color{lightgray} $\mathrm{Tr}\{T^aT^b\}=T_R\delta^{ab}$}
+            \annotate[yshift=-1.5em]{below, right}{tau}{\tiny proper time}
+            \annotate[yshift=-0.7em]{below, right}{g}{\tiny coupling constant}
+            \annotate[yshift=1.2em]{above}{Q}{color charge}
+            \annotate[yshift=1.2em]{above, right}{amu}{gauge field}
+    \vspace{10pt}
+    \begin{itemize}\itemsep0em 
+        \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.7}{${\color{starrysecond}\blacktriangleright}$}}} 
+        \item \begin{center}\footnotesize Solve the classical transport equations with {\color{starrysecond}$A^\mu$} the {\color{starrysecond}glasma field}\end{center} 
+        \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.7}{${\color{palgold}\blacktriangleright}$}}} 
+        % \item \begin{center}\footnotesize Color rotation conserves ${\color{palgold}q_{2}}=Q^aQ^a$ and ${\color{palgold}q_3}=d_{abc}Q^aQ^bQ^c$ {\color{palgold}SU($3$) Casimir invariants} \end{center} 
+        \item \begin{center}\footnotesize Alternatively, use {\color{palgold}Fokker-Planck equations}, also derived from Boltzmann-Vlasov \end{center} 
+    \end{itemize}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{talkbox}\scriptsize{\color{destacado}Ruggieri$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Mon 11:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{talkbox}};
+    % \end{tikzpicture}
+    % \begin{tikzpicture}[overlay, remember picture]
+    %     \node[anchor=north west] 
+    %     at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{talkbox}\scriptsize{Wong's equations} \end{talkbox}};
+    % \end{tikzpicture}
+    \blfootnote{\scriptsize Wong \href{https://link.springer.com/article/10.1007/BF02892134}{{\color{palteal}\texttt{[Nuovo Cim.A65,689]}$^\text{\scalebox{0.9}{\faExternalLink}}$}} Mrowczynski \href{https://arxiv.org/abs/1706.03127}{{\color{palgold}\texttt{[1706.03127]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+    \frametitle{Particles in glasma fields}
+    \framesubtitle{Numerical trajectories}
+    \vspace{-0.5cm}
+    \begin{columns}[onlytextwidth,t]
+        \column{.025\textwidth}
+       \column{.3\textwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
+                \item \begin{center}\footnotesize Change in {\bfseries coordinates} due to momentum kicks\end{center}
+            \end{itemize}
+                \vspace{-20pt}
+                \begin{figure}[!hbt]
+                    \centering
+                \includegraphics[width=1.1\columnwidth]{images/wong_coord.png}
+                \end{figure}
+                \column{.025\textwidth}
+        \column{.3\textwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
+                \item \begin{center}\footnotesize {\bfseries Momentum} broadening due to color Lorentz force\end{center}
+            \end{itemize}
+            \vspace{-20pt}
+            \begin{figure}[!hbt]
+                \centering
+                \includegraphics[width=1.1\columnwidth]{images/wong_mom.png}
+            \end{figure}
+            \column{.025\textwidth}
+        \column{.3\textwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{normal}\blacktriangleright}$}}} 
+                \item \begin{center}\footnotesize {\bfseries Color charge} rotation in SU(3) with Wilson lines\end{center}
+            \end{itemize}
+            \vspace{-15pt}
+            \begin{figure}[!hbt]
+                \centering
+                \includegraphics[width=1.05\columnwidth]{images/wong_charge.png}
+            \end{figure}
+            \column{.025\textwidth}
+    \end{columns}
+
+    \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2303.05599}{{\color{palgold}\texttt{[2303.05599]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+\end{frame}
 
 
 
@@ -1796,74 +1936,108 @@
 % \end{frame}
 % \setbeamertemplate{background}{}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}
-% \frametitle{Classical transport in glasma}
-% % \framesubtitle{Momentum broadening, transport coefficients, anisotropy}
-%     \begin{columns}[onlytextwidth,t]
-%         \column{.45\textwidth}
-%             \begin{center}
-%                 \begin{figure}
-%                     \centering
-%                     \vspace{-25pt}
-%                     \includegraphics[width=1.15\textwidth]{images/hqs_trajectories.png}
-%                 \end{figure}
-%             \end{center}
-%         \column{.05\textwidth}
-%         \column{.5\textwidth}
-%             \begin{center}
-%                 \begin{custombox2}{Momentum broadening}{palteal}
-%                     \small
-%                     \begin{varwidth}{0.92\textwidth}
-%                     \vspace{-5pt}
-%                     $${\color{palteal}\boldsymbol{\delta p^2_i}}(\tau)=p^2_i(\tau)-p^2_i(\tau_\mathrm{form})$$
-%                     \\[-25pt]
-%                     {\begin{center}\scriptsize\color{lightgray} Formation time $\tau_\mathrm{form}=1/2m$ \end{center}}    
-%                     \vspace{-5pt}
-%                     \begin{itemize}\itemsep0em 
-%                         \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{palteal}\blacktriangleright}$}}} 
-%                         \item {\scriptsize Momentum deflection from {\color{palteal}\bfseries color Lorentz force}}
-%                         % \\[1pt] 
-%                         % \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{palteal}\blacktriangleright}$}}} 
-%                         % \item {\scriptsize Averaged over glasma and particle ensembles}
-%                         \vspace{3pt}
-%                     \end{itemize}
-%                     \end{varwidth}
-%                 \end{custombox2}
+\begin{frame}
+\frametitle{Classical transport in glasma}
+\framesubtitle{Momentum broadening and diffusion}
+    \begin{columns}[onlytextwidth,t]
+        \column{.45\textwidth}
+            \begin{center}
+                \begin{figure}
+                    \centering
+                    \vspace{-35pt}
+                    \includegraphics[width=1.15\textwidth]{images/hqs_trajectories.png}
+                \end{figure}
+            \end{center}
+        \column{.05\textwidth}
+        \column{.5\textwidth}
+            \begin{center}
+                \begin{custombox2}{Momentum broadening}{palteal}
+                    \small
+                    \begin{varwidth}{0.92\textwidth}
+                    \vspace{-5pt}
+                    $${\color{palteal}\boldsymbol{\delta p^2_i}}(\tau)=p^2_i(\tau)-p^2_i(\tau_\mathrm{form})$$
+                    \\[-25pt]
+                    {\begin{center}\scriptsize\color{lightgray} Formation time $\tau_\mathrm{form}=1/2m$ \end{center}}    
+                    \vspace{-5pt}
+                    \begin{itemize}\itemsep0em 
+                        \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{palteal}\blacktriangleright}$}}} 
+                        \item {\scriptsize Momentum deflection from {\color{palteal}\bfseries color Lorentz force}}
+                        % \\[1pt] 
+                        % \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{palteal}\blacktriangleright}$}}} 
+                        % \item {\scriptsize Averaged over glasma and particle ensembles}
+                        \vspace{3pt}
+                    \end{itemize}
+                    \end{varwidth}
+                \end{custombox2}
 
-%                 \begin{custombox2}{Transport coefficients}{customyellow}
-%                     \small
-%                     \begin{varwidth}{0.92\textwidth}
-%                         \vspace{-12pt}
-%                     $$\frac{\d }{\d\tau}\langle {\color{palteal}\boldsymbol{\delta p^2_i}}(\tau)\rangle= \begin{cases}{\color{customyellow}\boldsymbol{\kappa_i}}(\tau),&\text{heavy quarks}\\
-%                         {\color{customyellow}\boldsymbol{\hat{q}_i}}(\tau),&\text{jets}\end{cases}$$
-%                     \\[-30pt]
-%                     {\begin{center}\scriptsize\color{lightgray} $\langle \quad\rangle$ averaged over glasma and particle ensembles\end{center}}    
-%                     \vspace{-15pt}
-%                     \begin{itemize}\itemsep0em 
-%                         \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{customyellow}\blacktriangleright}$}}} 
-%                         \item {\scriptsize Not the standard diffusion $\kappa$ or quenching $\hat{q}$}
-%                     \end{itemize}
-%                     \end{varwidth}
-%                 \end{custombox2}
+                \begin{custombox2}{Transport coefficients}{customyellow}
+                    \small
+                    \begin{varwidth}{0.92\textwidth}
+                        \vspace{-12pt}
+                    $$\frac{\d }{\d\tau}\langle {\color{palteal}\boldsymbol{\delta p^2_i}}(\tau)\rangle= \begin{cases}{\color{customyellow}\boldsymbol{\kappa_i}}(\tau),&\text{heavy quarks}\\
+                        {\color{customyellow}\boldsymbol{\hat{q}_i}}(\tau),&\text{jets}\end{cases}$$
+                    \\[-30pt]
+                    {\begin{center}\scriptsize\color{lightgray} $\langle \quad\rangle$ averaged over glasma and particle ensembles\end{center}}    
+                    \vspace{-15pt}
+                    \begin{itemize}\itemsep0em 
+                        \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{customyellow}\blacktriangleright}$}}} 
+                        \item {\scriptsize Not the standard diffusion $\kappa$ or quenching $\hat{q}$}
+                    \end{itemize}
+                    \end{varwidth}
+                \end{custombox2}
 
-%                 \begin{custombox2}{Momentum anisotropy}{starrymain}
-%                     \small
-%                     \begin{varwidth}{0.95\textwidth}
-%                         \vspace{-3pt}
-%                     % \vspace{-20pt}
-%                     \begin{itemize}\itemsep0em 
-%                         \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{starrymain}\blacktriangleright}$}}} 
-%                         \item {\scriptsize Longitudinal $L$ $\neq$ transverse $T$ $\Rightarrow$ ${\color{starrymain}\langle\boldsymbol{\delta p_L^2}\rangle/\langle\boldsymbol{\delta p_T^2}\rangle}$}
-%                     \end{itemize}
-%                     \end{varwidth}
-%                 \end{custombox2}
-%         \end{center}
-%     \end{columns}
-%     \end{frame}
+                % \begin{custombox2}{Momentum anisotropy}{starrymain}
+                %     \small
+                %     \begin{varwidth}{0.95\textwidth}
+                %         \vspace{-3pt}
+                %     % \vspace{-20pt}
+                %     \begin{itemize}\itemsep0em 
+                %         \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{starrymain}\blacktriangleright}$}}} 
+                %         \item {\scriptsize Longitudinal $L$ $\neq$ transverse $T$ $\Rightarrow$ ${\color{starrymain}\langle\boldsymbol{\delta p_L^2}\rangle/\langle\boldsymbol{\delta p_T^2}\rangle}$}
+                %     \end{itemize}
+                %     \end{varwidth}
+                % \end{custombox2}
+        \end{center}
+    \end{columns}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{plentalkbox}\scriptsize{\color{destacado}Danhoni$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 10:00$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{plentalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{plentalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6632973/}{{\color{isgold}Transport coefficients$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{plentalkbox}};
+    \end{tikzpicture}
+    \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain,noframenumbering]
+    \frametitle{}
+    \begin{center}
+        \begin{figure}
+            \smartdiagramset{
+                bubble center node color=gray!20,      
+                set color list={isgold!40, palteal!30, palviolet!30}
+                }
+            \smartdiagramadd[bubble diagram]{
+                \textit{Hard probes} \\ in \textbf{pre-equilibrium}, \textit{\footnotesize\color{isgold}Part 1}\\\textbf{\Large\color{isgold} Glasma}, \textit{\color{palteal}Jet} momentum \\ broadening
+            }{}
+            % \begin{tikzpicture}[remember picture,overlay]
+            %     \draw[myarrow, draw=isgold!80, line width=1.5pt, bend right=40]
+            %     (module2) to (module3);
+            % \end{tikzpicture}
+
+            % \smartdiagramconnect{{-latex},palteal,line width=2pt,bend left=20}{module2/module3}
+            % \smartdiagramconnect{<-}{module3/module2}
+        \end{figure}
+    \end{center}
+\end{frame}
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1953,100 +2127,579 @@
 % \end{frame}
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}
-%     \frametitle{Jets in glasma}
-%     % \framesubtitle{Momentum broadening, transport coefficient, anisotropy}
-%     \begin{center}
-%         \begin{figure}
-%             \centering
-%             \includegraphics[width=0.85\textwidth]{images/hp23_mom_broad_qhat_anis_wong_vs_qhat.pdf}
-%         \end{figure}
-%     \end{center}
-%     \vspace{-20pt}
-%     \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2307.07999}{{\color{custompink}\texttt{[2307.07999]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-% \end{frame}
+\begin{frame}
+    \frametitle{Jets in glasma}
+    % \framesubtitle{Momentum broadening, transport coefficient, anisotropy}
+    \begin{center}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.85\textwidth]{images/hp23_mom_broad_qhat_anis_wong_vs_qhat.pdf}
+        \end{figure}
+    \end{center}
+    \vspace{-20pt}
+    \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2307.07999}{{\color{custompink}\texttt{[2307.07999]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+\end{frame}
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}[noframenumbering]
-%     \frametitle{Jets in glasma}
-%     % \framesubtitle{Momentum broadening, transport coefficient, anisotropy}
-%     \begin{center}
-%         \begin{tikzpicture}
-%             \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.85\textwidth]{images/hp23_mom_broad_qhat_anis_wong_vs_qhat.pdf}};
-%             % \draw<1>[white, fill=white, fill opacity=0.9] (4.3,0.85) rectangle (5.4,5.5);
-%             \draw<1>[white,fill=white,fill opacity=0.9] (5.2,0.2) rectangle (13.0,6.8) node[opacity=1.0, pos=0.5, rotate=0, anchor=center, xshift=0.0 ,text width=7cm,align=center] {
-%                 \begin{itemize}\itemsep0em 
-%                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{custompink}\blacktriangleright}$}}} 
-%                     \item \large {\color{custompink}Rapid increase in $\langle \delta p^2\rangle$ at early $\delta\tau$}\\{\color{lightgray}\footnotesize $\not\sim$ successive independent momentum kicks}\\[10pt]
-%                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{lightgray}\blacktriangleright}$}}} 
-%                     \item Different $\langle \delta p^2\rangle$ behavior at late $\delta\tau$
-%                         \begin{itemize}\itemsep0em 
-%                             \setbeamertemplate{itemize items}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
-%                             \item \color{lightgray}\footnotesize Transverse $\langle \delta p^2_y\rangle$ saturates
-%                             \item \color{lightgray}\footnotesize Longitudinal $\langle \delta p^2_z\rangle$ decreases\\[10pt]
-%                         \end{itemize}
-%                     \item \large Eikonal $\approx$ dynamic with large $p^x$ \\[10pt]
-%                         % \begin{itemize}\itemsep0em 
-%                         %     \setbeamertemplate{itemize items}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
-%                         %     \item \color{lightgray}\footnotesize Transverse $\langle \delta p^2_y\rangle$ increases with $p^x$
-%                         %     \item \color{lightgray}\footnotesize Longitudinal $\langle \delta p^2_z\rangle$ descreses with $p^x$\\[10pt]
-%                         % \end{itemize}
-%                     \item \large Anisotropic $\langle \delta p^2_z\rangle>\langle \delta p^2_y\rangle$ 
-%                     \begin{itemize}\itemsep0em 
-%                         \setbeamertemplate{itemize items}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
-%                         \item \color{lightgray}More anisotropic for small $p^x$
-%                     \end{itemize}
-%                 \end{itemize}
-%                 };
-%         \end{tikzpicture}
-%     \end{center}
-%     \vspace{-20pt}
-%     \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2307.07999}{{\color{custompink}\texttt{[2307.07999]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-% \end{frame}
+\begin{frame}[noframenumbering]
+    \frametitle{Jets in glasma}
+    % \framesubtitle{Momentum broadening, transport coefficient, anisotropy}
+    \begin{center}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.85\textwidth]{images/hp23_mom_broad_qhat_anis_wong_vs_qhat.pdf}};
+            % \draw<1>[white, fill=white, fill opacity=0.9] (4.3,0.85) rectangle (5.4,5.5);
+            \draw<1>[white,fill=white,fill opacity=0.9] (5.2,0.2) rectangle (13.0,6.8) node[opacity=1.0, pos=0.5, rotate=0, anchor=center, xshift=0.0 ,text width=7.5cm,align=center] {
+                \begin{itemize}\itemsep0em 
+                    \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{custompink}\blacktriangleright}$}}} 
+                    \item \large {\color{custompink}Rapid increase in $\langle \delta p^2\rangle$ at early $\delta\tau$}\\{\color{lightgray}\footnotesize $\not\sim$ successive independent momentum kicks}\\[10pt]
+                    \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{lightgray}\blacktriangleright}$}}} 
+                    % \item Different $\langle \delta p^2\rangle$ behavior at late $\delta\tau$
+                    %     \begin{itemize}\itemsep0em 
+                    %         \setbeamertemplate{itemize items}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
+                    %         \item \color{lightgray}\footnotesize Transverse $\langle \delta p^2_y\rangle$ saturates
+                    %         \item \color{lightgray}\footnotesize Longitudinal $\langle \delta p^2_z\rangle$ decreases\\[10pt]
+                    %     \end{itemize}
+                    \item \large Eikonal $=$ quark with $p^x\rightarrow \infty$ 
+                    \\{\color{lightgray}\footnotesize $\approx$ dynamic quarks with finite $p^x$}\\[10pt]
+                    % \\[10pt]
+                        % \begin{itemize}\itemsep0em 
+                        %     \setbeamertemplate{itemize items}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
+                        %     \item \color{lightgray}\footnotesize Transverse $\langle \delta p^2_y\rangle$ increases with $p^x$
+                        %     \item \color{lightgray}\footnotesize Longitudinal $\langle \delta p^2_z\rangle$ descreses with $p^x$\\[10pt]
+                        % \end{itemize}
+                    \item \large Anisotropic $\langle \delta p^2_z\rangle>\langle \delta p^2_y\rangle$ \\{\color{lightgray}\footnotesize $\sim$ more $\delta p^2$ in longitudinal $z$ than transverse $y$}\\[10pt]
+                    % \begin{itemize}\itemsep0em 
+                        % \setbeamertemplate{itemize items}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
+                        % \item \color{lightgray}More anisotropic for small $p^x$
+                    % \end{itemize}
+                \end{itemize}
+                };
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-20pt}
+    \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2307.07999}{{\color{custompink}\texttt{[2307.07999]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+\end{frame}
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}[noframenumbering]
-%     \frametitle{Jets in glasma}
-%     % \framesubtitle{Momentum broadening, transport coefficient, anisotropy}
-%     \begin{center}
-%         \begin{tikzpicture}
-%             \hspace{-15pt}\node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.85\textwidth]{images/hp23_mom_broad_qhat_anis_wong_vs_qhat.pdf}};
-%             % \draw<1>[white, fill=white, fill opacity=0.9] (4.3,0.85) rectangle (5.4,5.5);
-%             \draw<1>[white,fill=white,fill opacity=0.9] (0.0,0.2) rectangle (5.2,6.8) node[opacity=1.0, pos=0.5, rotate=0, anchor=center, xshift=0.0 ,text width=6cm,align=center] {tg
-%                 \begin{itemize}\itemsep0em 
-%                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{custompink}\blacktriangleright}$}}} 
-%                     \item \large {\color{custompink} Large $\hat{q}$ peak at early $\delta\tau$}\\[10pt]
-%                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{lightgray}\blacktriangleright}$}}} 
-%                     \item Behavior of $\hat{q}$ at late $\delta\tau$
-%                         \begin{itemize}\itemsep0em 
-%                             \setbeamertemplate{itemize items}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
-%                             \item \color{lightgray}\footnotesize Transverse $\hat{q}_y\approx 0$
-%                             \item \color{lightgray}\footnotesize Longitudinal $\hat{q}_z<0$\\[10pt]
-%                         \end{itemize}
-%                     \item \large {\color{custompink} $\hat{q}_z<0$ $\sim$ ``coherence'' effect}\\
-%                     {\color{lightgray}\footnotesize $\not\sim$ independent momentum kicks}\\[10pt]
-%                     \item \large Anisotropic $\hat{q}_z\neq\hat{q}_y$ 
+\begin{frame}[noframenumbering]
+    \frametitle{Jets in glasma}
+    % \framesubtitle{Momentum broadening, transport coefficient, anisotropy}
+    \begin{center}
+        \begin{tikzpicture}
+            \hspace{-15pt}\node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.85\textwidth]{images/hp23_mom_broad_qhat_anis_wong_vs_qhat.pdf}};
+            % \draw<1>[white, fill=white, fill opacity=0.9] (4.3,0.85) rectangle (5.4,5.5);
+            \draw<1>[white,fill=white,fill opacity=0.9] (0.0,0.2) rectangle (5.2,6.8) node[opacity=1.0, pos=0.5, rotate=0, anchor=center, xshift=0.0 ,text width=6.5cm,align=center] {tg
+                \begin{itemize}\itemsep0em 
+                    \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{custompink}\blacktriangleright}$}}} 
+                    \item \large {\color{custompink} Large $\hat{q}$ peak at early $\delta\tau$}\\[10pt]
+                    % \item Behavior of $\hat{q}$ at late $\delta\tau$
+                    %     \begin{itemize}\itemsep0em 
+                    %         \setbeamertemplate{itemize items}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}} 
+                    %         \item \color{lightgray}\footnotesize Transverse $\hat{q}_y\approx 0$
+                    %         \item \color{lightgray}\footnotesize Longitudinal $\hat{q}_z<0$\\[10pt]
+                    %     \end{itemize}
+                    \item \large {\color{custompink} $\hat{q}_z<0$ $\sim$ ``coherence'' effect}\\
+                    {\color{lightgray}\footnotesize $\not\sim$ independent momentum kicks}\\[10pt]
+                    \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{lightgray}\blacktriangleright}$}}} 
+                    \item \large Anisotropic $\hat{q}_z\neq\hat{q}_y$ 
                     
-%                 \end{itemize}
-%                 };
-%         \end{tikzpicture}
-%     \end{center}
-%     \vspace{-20pt}
-%     \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2307.07999}{{\color{custompink}\texttt{[2307.07999]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
-% \end{frame}
+                \end{itemize}
+                };
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-20pt}
+    \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri  \href{https://arxiv.org/abs/2307.07999}{{\color{custompink}\texttt{[2307.07999]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}}
+\end{frame}
 
-    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t,noframenumbering]
+    \frametitle{Jets in glasma}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (7.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2021, 2023, 2025}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2020}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries\X};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.44\textwidth}
+    %    \vspace{-13pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\texttt{Anisotropic momentum broadening \\ in the 2+1D Glasma}}
+            % \vspace{-15pt}
+            \includegraphics[width=1\textwidth]{images/accumulated_momentum_tau.pdf}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.5\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{isgold} Momentum broadening $\langle p^2\rangle$ \\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}Numerical glasma fields on lattice}
+                    \item {\color{lightgray} Eikonal jets along lightlike trajectories}
+                    \item {\color{lightgray}\bfseries Anisotropic broadening $\boldsymbol{{\color{red}\langle p^2_z\rangle}>{\color{blue}\langle p^2_y\rangle}}$}
+                    % \item {\color{lightgray} Eikonal jets along lightlike trajectories}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Ipp, Müller, Schuh \href{https://arxiv.org/abs/2001.10001}{\color{palgold}\texttt{[2001.10001]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t,noframenumbering]
+    \frametitle{Jets in glasma}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (7.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2021, 2023, 2025}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2020}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries\X};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.44\textwidth}
+    %    \vspace{-13pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\texttt{Anisotropic momentum broadening \\ in the 2+1D Glasma}}
+            % \vspace{-15pt}
+            \includegraphics[width=1\textwidth]{images/strong_correlators_r.pdf}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.5\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.6}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{isgold} Field correlators $\langle F_zF_z\rangle$ \\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}Numerical glasma fields on lattice}
+                    \item {\color{lightgray} Eikonal jets along lightlike trajectories}
+                    \item {\color{lightgray}Anisotropic broadening ${\color{red}\langle p^2_z\rangle}>{\color{blue}\langle p^2_y\rangle}$}
+                    \item {\color{lightgray} {\color{red}Electric fields $E_z$} are more efficient at \\deflecting jets than {\color{blue}magnetic fields $B_z$}}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Ipp, Müller, Schuh \href{https://arxiv.org/abs/2001.10001}{\color{palgold}\texttt{[2001.10001]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t,noframenumbering]
+    \frametitle{Jets in glasma}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (7.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2021, 2023, 2025}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2020}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries\X};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.44\textwidth}
+    %    \vspace{-13pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\textbf{Jet momentum broadening in the \\ pre-equilibrium Glasma
+            % }}
+            % \vspace{-5pt}
+            \includegraphics[width=\textwidth]{images/qhat_tau.pdf}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.5\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.5}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{isgold} Jet quenching parameter $\hat{q}$\\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}Numerical glasma fields on lattice}
+                    \item {\color{lightgray} Eikonal jets along lightlike trajectories}
+                     \item {\color{lightgray}\bfseries Large $\boldsymbol{\hat{q}}$ in glasma at early $\boldsymbol{\tau}$}
+                     \item {\color{lightgray}More $\hat{q}$ for glasma with larger $Q_s$}
+                    % \item {\normalsize\color{lightgray}{\bfseries Weak field} analytical calculations}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Ipp, Müller, Schuh \href{https://arxiv.org/abs/2009.14206}{\color{palgold}\texttt{[2009.14206]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t,noframenumbering]
+    \frametitle{Jets in glasma}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (7.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2020, 2023, 2025}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2021}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries\X};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.44\textwidth}
+       \vspace{10pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\texttt{Jet quenching in glasma}}
+            % \vspace{-5pt}
+            \includegraphics[width=0.95\textwidth]{images/Fig-qhat-six-cases.pdf}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.5\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.5}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{isgold} Momentum broadening $\Delta p_T^2$ \\[5pt] Jet quenching parameter $\hat{q}$  \\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}Analytical glasma fields in $\tau$-expansion}
+                    \item {\color{lightgray} Fokker-Planck equation for quarks}
+                    \item {\color{lightgray} {\bfseries Estimate $\boldsymbol{\Delta p_T^2|^\mathrm{neq}/\Delta p_T^2|^\mathrm{eq}\approx 0.93}$}}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Carrington, Czajka, Mrowczynski \href{https://arxiv.org/abs/2112.06812}{\color{palgold}\texttt{[2112.06812]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+\end{frame}
+   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t,noframenumbering]
+    \frametitle{Jets in glasma}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (7.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2020, 2021, 2025}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2023}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries\X};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.44\textwidth}
+       \vspace{-13pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\texttt{Simulating jets and \\ heavy quarks in the Glasma}}
+            % \vspace{-10pt}
+            \includegraphics[width=0.9\textwidth]{images/wong_qhat.pdf}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.5\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.5}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{isgold} Momentum broadening $\langle \delta p^2\rangle$\\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}Numerical glasma fields on lattice}
+                    \item {\color{lightgray}Numerical jets using Wong's equations}
+                    \item {\color{lightgray}\bfseries Colored-particle-in-cell solver}
+                    \item {\color{lightgray}Comparison with eikonal jets}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri \href{https://arxiv.org/abs/2303.05599}{\color{palgold}\texttt{[2303.05599]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t,noframenumbering]
+    \frametitle{Jets in glasma}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (7.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2020, 2021, 2023}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2019),count=\Z] in {2025}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries This IS};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.44\textwidth}
+    %    \vspace{-13pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\texttt{Simulating jets and \\ heavy quarks in the Glasma}}
+            % \vspace{-10pt}
+            \includegraphics[width=0.95\textwidth]{images/Screenshot 2025-08-27 at 17.04.41.png}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.5\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.5}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{isgold} Jet quenching parameter $\hat{q}$\\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}Analytical glasma fields in dilute limit}
+                    \item {\color{lightgray}Fokker-Planck equation for quarks}
+                    \item {\color{lightgray}\bfseries More reliable than the $\boldsymbol{\tau}$-expansion}
+                    \item {\color{lightgray}Compatible results with previous $\hat{q}$ estimates}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    % \blfootnote{\scriptsize DA, Băran, Greco, Ipp, Müller, Ruggieri \href{https://arxiv.org/abs/2303.05599}{\color{palgold}\texttt{[2303.05599]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.05cm]current page.north west) {\begin{partalkbox}\scriptsize{\color{destacado}Guerrero Rodríguez$\hspace{1pt}^\text{\scalebox{0.9}{\faComment}}$} {\itshape Tue 16:30$\hspace{1pt}^\text{\scalebox{0.9}{\faClockO}}$} \end{partalkbox}};
+    \end{tikzpicture}
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=north west] 
+        at ([xshift=0.05cm,yshift=-0.48cm]current page.north west) {\begin{partalkbox}\scriptsize{\href{https://indico.cern.ch/event/1479384/contributions/6663053/}{{\color{palblue}Jet quenching in glasma$^\text{\scalebox{0.9}{\faHandOLeft}}$}}} \end{partalkbox}};
+    \end{tikzpicture}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain,noframenumbering]
+    \frametitle{}
+    \begin{center}
+        \begin{figure}
+            \smartdiagramset{
+                bubble center node color=gray!20,      
+                set color list={isgold!40, palteal!30, palviolet!30}
+                }
+            \smartdiagramadd[bubble diagram]{
+                \textit{Jets} in \\ \textbf{pre-equilibrium}, {\Large $R_{AA}$}, {\Large $v_2$}
+            }{}
+            % \begin{tikzpicture}[remember picture,overlay]
+            %     \draw[myarrow, draw=isgold!80, line width=1.5pt, bend right=40]
+            %     (module2) to (module3);
+            % \end{tikzpicture}
+
+            % \smartdiagramconnect{{-latex},palteal,line width=2pt,bend left=20}{module2/module3}
+            % \smartdiagramconnect{<-}{module3/module2}
+        \end{figure}
+    \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t,noframenumbering]
+    \frametitle{Jets in pre-equilibrium}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (0.7,0) -- (9.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2017),count=\Z] in {2022, 2025}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2017),count=\Z] in {2019}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries\X};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.47\textwidth}
+    %    \vspace{-13pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\texttt{Jet quenching as a probe \\ of the initial stages}}
+            \vspace{-5pt}
+            \includegraphics[width=1.05\textwidth]{images/raa-vn-tauq_crop.pdf}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.46\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.5}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{palgold} $R_{AA}$ and $v_2$  \\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}{\bfseries EKRT} initial condition, {\bfseries no glasma}}
+                    \item {\color{lightgray}Relativistic boost-invariant hydrodynamics}
+                    \item {\color{lightgray}Jet quenching using {\bfseries BDMPS-Z} formalism}
+                    \item {\color{lightgray}{\bfseries Energy loss suppressed in first $\boldsymbol{\sim 0.6\,\mathrm{fm/c}}$}}
+                    \item {\color{lightgray}Initial stage energy loss affects $v_2$}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Andres, Armesto, Niemi, Paatelainen, Salgado \href{https://arxiv.org/abs/1902.03231}{\color{palgold}\texttt{[1902.03231]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[t,noframenumbering]
+    \frametitle{Jets in pre-equilibrium}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (0.7,0) -- (9.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2017),count=\Z] in {2019, 2025}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2017),count=\Z] in {2022}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries\X};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.47\textwidth}
+    %    \vspace{-13pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\footnotesize\texttt{Medium-induced radiation with vacuum \\ propagation in pre-hydrodynamics phase}}
+            \vspace{10pt}
+            \includegraphics[width=1.05\textwidth]{images/fig2_v2.pdf}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.46\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.5}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{isgold} $Q_{AA}$ and $w_2$ \\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}{\bfseries BDMPS-Z} framework for energy loss}
+                    \item {\color{lightgray}Consider {\bfseries vacuum emissions before QGP}}
+                    \item {\color{lightgray}No medium, {\bfseries no glasma}}
+                    \item {\color{lightgray}Extract $Q_{AA}$ and $w_2$, proxies for $R_{AA}$ and $v_2$}
+                    \item {\color{lightgray}\bfseries No effect on $\boldsymbol{Q_{AA}}$, only $\boldsymbol{w_2}$ is affected}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Andres, Apolinário, Dominguez, Gonzalez Martinez, Salgado \href{https://arxiv.org/abs/2211.10161}{\color{palgold}\texttt{[2211.10161]}$^\text{\scalebox{0.9}{\faExternalLink}}$}}
+\end{frame}
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
