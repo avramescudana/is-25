@@ -3899,6 +3899,70 @@
     \end{center}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+    \frametitle{Transport in EKT}
+    % \framesubtitle{Transport coefficients for hard probes}
+        % \vspace{10pt} 
+        % \begin{itemize}
+        %     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{ming}\blacktriangleright}$}}}
+        %     \item \begin{center}{{\color{ming}Approach}: {\color{ming}effective kinetic theory} to study the gluon distribution function $f(\boldsymbol{k})$} \end{center}
+        %     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{pinky}\blacktriangleright}$}}}
+        %     \item \begin{center}{{\color{pinky}Quantities}: various transport coefficients {\color{pinky}$\kappa$}, {\color{pinky}$A_i$}, {\color{pinky}$B_{ij}$} extracted from $f(\boldsymbol{k})$} \end{center}
+        % \end{itemize} 
+        \begin{center}
+            \begin{custombox2}{Transport coefficients during EKT}{lightgray}
+            \small
+            \begin{varwidth}{0.67\textwidth}
+            \begin{itemize}\itemsep0em 
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{palteal}\blacktriangleright}$}}} 
+                \item {\color{palteal}EKT} $\rightarrow$ gluon distribution function $f$\\
+                \item {\color{palteal}HTL} $\rightarrow$ scattering matrix with self-energy corrections $\mathcal{M}$\\
+                \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{0.7}{${\color{pinky}\boldsymbol{\Rightarrow}}$}}} 
+                \item Transport coefficients for jets {\color{pinky}$\hat{q}$} and heavy quarks {\color{pinky}$\kappa$}, {\color{pinky}$A_i$}, {\color{pinky}$B_{ij}$}
+            \end{itemize}
+            \end{varwidth}
+        \end{custombox2}
+        \end{center}
+        \begin{columns}
+            \begin{column}{0.066\textwidth}\end{column}
+            \begin{column}{0.35\textwidth}
+                \centering
+                \begin{figure}
+                    \centering
+                    \captionsetup{justification=centering}
+                    \includegraphics[width=0.95\textwidth]{images/feynmandiag_wo_title.pdf}
+                    % \caption{\scriptsize Figure credits to F. Lindenbauer}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.033\textwidth}\end{column}
+            \begin{column}{0.483\textwidth}
+                \renewcommand{\eqnhighlightheight}{\vphantom{x}}
+                \begin{equation*}
+                    {\color{pinky}\hat{q}},{\color{pinky}\kappa}\propto \int\eqnmark[starrysecond]{PS}{\mathrm{d}\Gamma_{\mathrm{PS}}}\hspace{-2pt}\eqnmark[destacado]{q}{\boldsymbol{q}^2}\hspace{-2pt}\abs{\hspace{-2pt}\eqnmark[ektblue]{M}{\mathcal{M}}\hspace{-2pt}}^2f(\hspace{-3pt}\eqnmark[ektgreen]{fk}{\boldsymbol{k}}\hspace{-3pt})[1+f(\hspace{-3pt}\eqnmark[ektgreen]{fkp}{\boldsymbol{k}^{\boldsymbol{\prime}}}\hspace{-3pt})]
+                    \end{equation*}
+                    \annotate[yshift=+2.0em]{above, right}{PS}{\tiny phase space measure}
+                    \annotate[yshift=+0.5em]{above, right}{M}{\tiny matrix element}
+                    \annotate[yshift=-2.0em]{below, right}{q}{\tiny momentum exchange}
+                    \annotate[yshift=-0.5em]{below, right}{fk}{\tiny incoming}
+                    \annotate[yshift=-0.5em]{below, right}{fkp}{\tiny outgoing}
+            \end{column}
+            \begin{column}{0.066\textwidth}\end{column}
+        \end{columns}
+        \vspace{-5pt}
+        \begin{center}
+            \footnotesize
+            \hspace{9pt}Drag $\displaystyle {\color{pinky}A_i}\propto \int\mathrm{d}\Gamma_{\mathrm{PS}}\,\boldsymbol{q}_i\,\abs{\mathcal{M}}^2f(\boldsymbol{k})[1+ f(\boldsymbol{k}^{\boldsymbol{\prime}})]$ \\
+            Diffusion $\displaystyle {\color{pinky}B_{ij}}\propto \int\mathrm{d}\Gamma_{\mathrm{PS}}\,\boldsymbol{q}_i\boldsymbol{q}_j\,\abs{\mathcal{M}}^2f(\boldsymbol{k})[1+ f(\boldsymbol{k}^{\boldsymbol{\prime}})]$
+        \end{center}
+\end{frame}
+
+
+
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
