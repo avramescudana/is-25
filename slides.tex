@@ -2973,13 +2973,13 @@
             \smartdiagramset{
                 planet color=lightpink!15,      
                 set color list={isgold!40, palteal!30},
-                distance planet-satellite=4.0cm,
-                planet size=4cm, 
-                planet text width=2.5cm,
+                distance planet-satellite=4.2cm,
+                planet size=3.8cm, 
+                planet text width=3.5cm,
                 /tikz/connection planet satellite/.append style={<-}
                 }
             \smartdiagram[constellation diagram]{
-                {\Large\color{lightpink}\textit{Heavy quarks} in \\ \textbf{glasma$^{\color{lightpink}\boldsymbol{*}}$}}, {\Large $R_{AA}$}, {\Large $v_2$} 
+                {\Large\color{lightpink}\textit{Heavy quarks} \\in \textbf{glasma$^{\color{lightpink}\boldsymbol{*}}$}}, {\Large $R_{AA}$}, {\Large $v_2$} 
             }
         \end{figure}
     \end{center}
@@ -2989,7 +2989,7 @@
             \small
             \begin{varwidth}{\textwidth}
             % \vspace{-5pt}
-            \itshape$\color{lightpink}^{\boldsymbol{*}}$Pre-hydro $\neq$ glasma, extrapolate $\hat{q}_\mathrm{neq}(\tau)$ to as early $\tau$ as possible!
+            \itshape$\color{lightpink}^{\boldsymbol{*}}$Transport in glasma coupled to next stages!
             \end{varwidth}
         \end{untitledcustombox}
     \end{center}
@@ -3003,8 +3003,8 @@
     \frametitle{Heavy quarks in glasma}
     \begin{center}
         \begin{tikzpicture}[xscale=1]
-            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (7.5+0.2,0);
-            \foreach \X [evaluate=\X as \Y using int(\X-2018),count=\Z] in {2021, 2024}
+            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (8.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2018),count=\Z] in {2025}
             {
             \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
             \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
@@ -3038,11 +3038,11 @@
             {\Large\color{isgold} $R_{AA}$ and $v_2$ for D-mesons \\[10pt]}
             \footnotesize
                 \begin{itemize}
-                    \item {\color{lightgray}Numerical glasma fields $\rightarrow$ CYM}
-                    \item {\color{lightgray}Numerical heavy quarks $\rightarrow$ Wong}
-                    \item {\color{lightgray}Coupled to {\bfseries Langevin with drag and diffusion}}\\[15pt]
+                    \item {\color{lightgray}Glasma $\rightarrow$ numerical SU($2$) fields}
+                    \item {\color{lightgray}Heavy quarks $\rightarrow$ numerical trajectories}
+                    \item {\color{lightgray}Coupled to {\bfseries Langevin} with drag and diffusion coefficients fitted to $R_{AA}$}\\[15pt]
                     \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{1}{${\color{destacado}\boldsymbol{\Rightarrow}}$}}} 
-                    \item {\color{destacado}\bfseries\normalsize{Broadening in glasma increases $\boldsymbol{v_2}$}}
+                    \item {\color{destacado}\bfseries\normalsize{$\boldsymbol{v_2}$ sensitive to broadening in glasma}}
                 \end{itemize}
                 % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
         \end{center}
@@ -3055,8 +3055,65 @@
 %%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[t]
+    \frametitle{Heavy quarks in glasma}
+    \begin{center}
+        \begin{tikzpicture}[xscale=1]
+            \draw[line width=0.7mm,-latex,isgold!20] (-0.2,0) -- (8.5+0.2,0);
+            \foreach \X [evaluate=\X as \Y using int(\X-2018),count=\Z] in {2019}
+            {
+            \draw[highlight on=<0>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<0>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\X};
+            }
+            \foreach \X [evaluate=\X as \Y using int(\X-2018),count=\Z] in {2025}
+            {
+            \draw[highlight on=<\Z>] (\Y,0) circle[radius=3pt];
+            \node[anchor=south,highlight on=<\Z>,fill=white,rotate=45,anchor=south
+            west,inner sep=0pt] at (\Y,0.2) {\bfseries\X};
+            }
+        \end{tikzpicture}
+    \end{center}
+    \vspace{-10pt}
+    \begin{columns}[onlytextwidth,t]
+        \column{.02\textwidth}
+       \column{.43\textwidth}
+    %    \vspace{-13pt}
+       \begin{figure}
+            \centering
+            \captionsetup{justification=centering}
+            % \caption{\texttt{Impact of Glasma on heavy quark \\ observables in AA collisions}}
+            % \vspace{-5pt}
+            % \includegraphics[width=0.95\textwidth]{images/1-s2.0-S0370269319306550-gr003_lrg.jpg}
+        \end{figure}
+        \column{.02\textwidth}
+        \column{.5\textwidth}
+        % \vspace{0.2cm}
+        \begin{center}
+            \setbeamertemplate{itemize item}{\raisebox{0.1em}{\scalebox{0.5}{${\color{lightgray}\blacktriangleright}$}}}
+            {\Large\color{isgold} $R_{AA}$ and $v_2$ for D-mesons \\[10pt]}
+            \footnotesize
+                \begin{itemize}
+                    \item {\color{lightgray}Matter $\rightarrow$ IP-Glasma + MUSIC hydro}
+                    \item {\color{lightgray}Heavy quarks $\rightarrow$ MARTINI + Langevin + hadronization (coalescence + fragmentation)}
+                    \item {\color{lightgray}{\bfseries Langevin} with drag and diffusion coefficients from pQCD or lattice}\\[15pt]
+                    \setbeamertemplate{itemize item}{\raisebox{0.2em}{\scalebox{1}{${\color{destacado}\boldsymbol{\Rightarrow}}$}}} 
+                    \item {\color{destacado}\bfseries\normalsize{$R_{AA}$ and $\boldsymbol{v_2}$ weak sensitivity to glasma}}
+                \end{itemize}
+                % {\footnotesize\color{lightgray}\texttt{Ballistic diffusion of heavy quarks in \\ the early stage of relativistic heavy \\ ion collisions at RHIC and LHC}}
+        \end{center}
+        \column{.02\textwidth}
+    \end{columns}
+    \blfootnote{\scriptsize Gale, Jeon, Kurian, Schenke, Singh \href{https://arxiv.org/abs/2409.15038}{{\color{palgold}\texttt{[2409.15038]$^\text{\scalebox{0.9}{\faExternalLink}}$}}} \href{https://indico.cern.ch/event/1334113/contributions/6289847/}{{\color{palgold}\texttt{[QM25]$^\text{\scalebox{0.9}{\faExternalLink}}$}}}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% SLIDE %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[plain,noframenumbering]
     \frametitle{}
+    \vspace{10pt}
     \begin{center}
         \begin{figure}
             \smartdiagramset{
@@ -3064,13 +3121,23 @@
                 set color list={isgold!40, none, none, none, palviolet!30}
                 }
             \smartdiagramadd[bubble diagram]{
-                {{\large\color{jyured}\bfseries Phenomenology}\\ \normalsize\color{jyured}$R_{AA}$, $v_2$, $\mathcal{C}(\Delta\phi)$ \\ \normalsize\color{jyured} $q\overline{q}$ dissociation}, \textit{\footnotesize\color{isgold}Part 1}\\\textbf{\Large\color{isgold} Glasma}, , , , \textit{\color{palviolet}Heavy quark}\\ diffusion
+                {{\large\color{jyured}\bfseries Phenomenology{$\color{jyured}^{\boldsymbol{*}}$}}\\ \normalsize\color{jyured}$R_{AA}$, $v_2$, $\mathcal{C}(\Delta\phi)$ \\ \normalsize\color{jyured} $q\overline{q}$ dissociation}, \textit{\footnotesize\color{isgold}Part 1}\\\textbf{\Large\color{isgold} Glasma}, , , , \textit{\color{palviolet}Heavy quark}\\ diffusion
             }{}
             \begin{tikzpicture}[remember picture,overlay]
                 \draw[myarrow, draw=isgold!50, line width=2pt, bend left=15]
                 (module2) to (module6);
             \end{tikzpicture}
         \end{figure}
+    \end{center}
+    \vspace{-50pt}
+    \begin{center}
+        \begin{untitledcustombox}{jyured}
+            \small
+            \begin{varwidth}{\textwidth}
+            % \vspace{-5pt}
+            \itshape$\color{jyured}^{\boldsymbol{*}}$Transport of heavy quarks in glasma not properly coupled to next stages!
+            \end{varwidth}
+        \end{untitledcustombox}
     \end{center}
 \end{frame}
 
